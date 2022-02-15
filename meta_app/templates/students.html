@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title_clock %} Students {% endblock %}
+
+{% block content_block %}
+
+<body style="background-color:white;">
+
+<br><br><br>
+<h1 style="text-align:center">Our Students</h1><br>
+<h3 style="text-align:center">Students Details</h3>
+{% for s in students %}
+<span style='text-align:center; margin-left:35%'>{{s.first_name}} {{s.last_name}} {{s.email}} {{s.phone_num}} {{s.id}}</span>
+<button onclick="location.href = '{% url 'delete_student' s.id %}'" class="btn btn-secondary" value="Delete">
+            <span class="glyphicon glyphicon-remove"></span>
+            Delete
+        </button><button class="btn btn-secondary" onclick="location.href = '{% url 'edit_student' s.id %}'">Edit</button> <br> <hr>
+{% endfor %}
+
+</body>
+
+
+{% endblock %}

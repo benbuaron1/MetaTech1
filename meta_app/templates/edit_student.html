@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title_clock %} Studens {% endblock %}
+
+{% block content_block %}
+
+<body style="background-color:white;">
+<br><br>
+<form method="POST" action="{% url 'edit_student' student.id %}">
+
+<!--    {{form.first_name}}-->
+
+<!--    <input type="text" id="first_name" name="first_name" value="{{ student.first_name }}">-->
+<!--    <br>-->
+<!--    <label for="last_name">Last Name:</label>-->
+<!--    <input type="text" id="last_name" name="last_name" value="{{ student.last_name }}"><br>-->
+
+<!--    <label for="email">Email:</label>-->
+<!--    <input type="text" id="email" name="email" value="{{ student.email }}"><br>-->
+
+<!--        <label for="city">City:</label>-->
+<!--    <input type="text" id="city" name="city" value="{{ student.city }}"><br>-->
+
+<!--        <label for="address">Address:</label>-->
+<!--    <input type="text" id="address" name="address" value="{{ student.address }}"><br>-->
+
+<!--        <label for="phone_num">Phone Number:</label>-->
+<!--    <input type="text" id="phone_num" name="phone_num" value="{{ student.phone_num }}"><br>-->
+
+    {{form.as_p}}
+
+
+    <br><button type="submit" value="submit" class="btn btn-secondary">Submit</button>
+
+    </form>
+</body>
+
+
+{% endblock %}

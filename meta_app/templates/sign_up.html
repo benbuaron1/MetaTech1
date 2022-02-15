@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title_clock %} Sign Up {% endblock %}
+
+{% block content_block %}
+
+<body style="background-color:white;">
+
+<br><br><br>
+<h1 style="text-align:center">Sign Up For Free Knowledge</h1>
+<hr>
+<div style="margin-right:20%;margin-left:40%">
+<form action="{% url 'sign_up' %}" method="post" style="margin-top:3%;">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" class="btn btn-secondary">
+</form>
+</div>
+
+
+
+
+{% endblock %}

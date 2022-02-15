@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/ bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!--    <script-->
+<!--      src="https://kit.fontawesome.com/a076d05399.js"-->
+<!--      crossorigin="anonymous"-->
+<!--    ></script>-->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title_clock %} Meta-Techs {% endblock %}</title>
+    <link href="{% static 'meta_app/styles1.css' %}" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="background1234.css" />
+  </head>
+  {% if user.is_authenticated %}
+  <nav class="navigator">
+    <button  onclick="location.href='/'" class="menu_button_regular"><i class="fa fa-home"></i></button>
+    <!-- <i style="font-size: 24px" class="fab fa-apple" ;>bwn</i> -->
+
+    <button class="menu_button_regular">Contact us</button>
+    <button class="menu_button_regular">Pricing</button>
+
+    <button onclick="location.href='/students'" class="menu_button_regular">Students</button>
+    <img src="{% static 'meta_app/logo3.png' %}" style="width:17%; text-align:right">
+    <button class="menu_button_regular">Hey, {{user.first_name}}</button>
+    <button class="menu_button_regular">My Learning</button>
+    <button class="menu_button_regular" onclick="location.href='/logout'">Log Out</button>
+  </nav>
+  {% else %}
+    <nav class="navigator">
+    <button  onclick="location.href='/'" class="menu_button_regular"><i class="fa fa-home"></i></button>
+    <!-- <i style="font-size: 24px" class="fab fa-apple" ;>bwn</i> -->
+    <button class="menu_button_regular">Contact us</button>
+    <button class="menu_button_regular">Pricing</button>
+    <button onclick="location.href='/sign_up'" class="menu_button_regular">Sign up</button>
+    <button onclick="location.href='/students'" class="menu_button_regular">Students</button>
+    <img src="{% static 'meta_app/logo3.png' %}" style="width:17%; text-align:right">
+    <button class="menu_button_regular" onclick="location.href='/login'">Log in</button>
+  </nav>
+
+  {% endif %}
+
+<body style="background-color:whitesmoke">
+
+    {% block content_block %}
+
+    {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title_clock %} Studens {% endblock %}
+
+{% block content_block %}
+
+<body style="background-color:white;">
+<br><br>
+<form method="POST" action="{% url 'delete_student' students.id %}">
+        Are you want to delete {{students.first_name}} {{students.last_name}} ?
+        <input class="btn btn-secondary" type="submit" value="Yes" />
+        <a class="btn btn-secondary" href="/">No </a>
+    </form>
+</body>
+
+
+{% endblock %}
