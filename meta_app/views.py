@@ -61,11 +61,5 @@ def edit_student_func(request,student_id):
                   context={'form':form,'student':student})
 
 
-
-
-
-
-
-
-
-
+def index2(request):
+    return render(request, 'index2.html')

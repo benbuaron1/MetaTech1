@@ -1,0 +1,44 @@
+html{
+    font-family: Gisha;
+}
+
+.containter_div_row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.containter_div_col{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+nav{
+  display: flex;
+  overflow: hidden;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(120, 122, 121, 0.871);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+}
+
+
+.p1{
+    font-size: 60px;
+}
+
+.p2{
+
+}
+
+.join_button{
+    width: 130px;
+}
+

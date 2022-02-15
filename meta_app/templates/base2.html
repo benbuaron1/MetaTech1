@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title_clock %} MetaTech {% endblock %}</title>
+    <link href="{% static 'meta_app/styles2.css' %}" rel="stylesheet" />
+
+  </head>
+  <nav>
+      <button class="menu_button_regular">בית</button>
+      <button class="menu_button_regular">מי אנחנו</button>
+      <button class="menu_button_regular">הקורסים שלנו</button>
+      <button class="menu_button_regular">שירותים</button>
+      <button class="menu_button_regular">הרשמה</button>
+      <button class="menu_button_regular">התחבר</button>
+  </nav>
+<body>
+    <div class="containter_div_col">
+
+    </div>
+    {% block content_block %}
+
+    {% endblock %}
+
+</body>
+</html>
