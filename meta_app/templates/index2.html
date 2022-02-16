@@ -2,24 +2,57 @@
 {% load static %}
 
 {% block content_block %}
-  <body>
+    <body>
     <div class="containter_div_col">
 
 
-        <div class="containter_div_row" style="background-image: linear-gradient(to right, #021B79, #0575E6); padding-top: 10%; padding-bottom: 10%">
-            <img src="{% static 'meta_app/py.png' %}" style="margin-right: 3%; width: 350px">
+        {#        <div class="containter_div_row rowtocol1" style="background-image: linear-gradient(to right, #021B79, #0575E6); padding-top: 10%; padding-bottom: 10%">#}
+        <div class="containter_div_row rowtocol1"
+             style="background-image: linear-gradient(180deg, rgba(0,0,0,1) 12%, rgba(47,47,47,1) 37%, rgba(127,127,128,1) 63%, rgba(222,222,222,1) 81%, rgba(251,251,251,1) 93%); padding-top: 10%; padding-bottom: 10%">
+            <img src="{% static 'meta_app/py.png' %}" class="logo1" style="margin-right: 3%; width: 30%">
             <div class="containter_div_col">
-                <p class="p1">
+                <div class="p1" style="width: 100%; color:white">
                     לימוד מקצועות המחשב
-                </p>
-                <p>
-                    אנחנו בלה בלה בלה בלה בלה מה אתה אומ על זה??
+                </div>
+                <p class="p2">
+                    אנחנו בלה בלה בלה בלה בלה מה אתה אומ על זה
                 </p>
                 <button class="join_button">הצטרפו עכשיו</button>
             </div>
         </div>
+        <div class="containter_div_row rowtocol2" style="padding-bottom: 5%;">
+            <div class="p2" style="width: 40%; margin-right: 5%; margin-top: 5%">
+                אמא של כולם זונה מוצצת מה קורה אח שלי תחת זין מה אלה ולריה ראיאת משו אידגעל ללנע דנ דערגו דרלגלדגרי לדרע
+                גויךודער וידג עיךוגרי ךודיגררע וךיגךרע
+            </div>
+            <div class="containter_div_col">
+                <div class="p1" style="margin-bottom: 16%; margin-top: 24%">
+                    services
+                </div>
+                <button class="option_button_1"> python</button>
+                <button class="option_button_1"> java</button>
+                <button class="option_button_1"> html</button>
+            </div>
+
+        </div>
+        <div class="containter_div_row"
+             style="background-image: linear-gradient(0deg, rgba(0,0,0,1) 12%, rgba(47,47,47,1) 37%, rgba(127,127,128,1) 63%, rgba(222,222,222,1) 81%, rgba(251,251,251,1) 93%); padding-top: 10%; padding-bottom: 10%">
+            <div class="containter_div_col">
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="containter_div_col">
+ <br>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
     </div>
-  </body>
+    </body>
 
 {% endblock %}
+
 

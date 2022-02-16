@@ -1,31 +1,45 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-  <head>
+<head>
 
 
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{% block title_clock %} MetaTech {% endblock %}</title>
-    <link href="{% static 'meta_app/styles2.css' %}" rel="stylesheet" />
+    <link href="{% static 'meta_app/styles2.css' %}" rel="stylesheet"/>
+    <script src="{% static 'meta_app/script2.js' %}"></script>
 
-  </head>
-  <nav>
-      <button class="menu_button_regular">בית</button>
-      <button class="menu_button_regular">מי אנחנו</button>
-      <button class="menu_button_regular">הקורסים שלנו</button>
-      <button class="menu_button_regular">שירותים</button>
-      <button class="menu_button_regular">הרשמה</button>
-      <button class="menu_button_regular">התחבר</button>
-  </nav>
-<body>
-    <div class="containter_div_col">
+</head>
+{#<nav class="topnav" id="myTopnav" style="background-image: linear-gradient(to right, rgba(2,27,121,0.65), rgba(5,117,230,0.67)) ;">#}
+<nav class="topnav" id="myTopnav" style="background-color: black;">
+    <nav2 style="z-index: 2; padding: 2%; background-color: rgba(255,255,255,0)">
+        <a href="javascript:void(0);" class="container icon" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </a>
+    </nav2>
+    <nav1 class="topnav">
+        <button class="menu_button_regular">צור קשר</button>
+        <button class="menu_button_regular">מי אנחנו</button>
+        <button class="menu_button_regular">הקורסים שלנו</button>
+        <button class="menu_button_regular">שירותים</button>
+        <button class="menu_button_regular">הרשמה</button>
+        <button class="menu_button_regular">התחבר</button>
+        <button class="menu_button_regular">בית</button>
+    </nav1>
 
-    </div>
-    {% block content_block %}
 
-    {% endblock %}
+</nav>
+<body style="padding: 0; margin: 0">
+<div class="containter_div_col">
+
+</div>
+{% block content_block %}
+
+{% endblock %}
 
 </body>
 </html>
