@@ -5,6 +5,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.core.validators import EmailValidator, MinLengthValidator
 from django import forms
+from django.forms import HiddenInput
+
 from .models import *
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
@@ -25,10 +27,19 @@ def validate_phone(number):
 #         model = Student
 #         fields = ['first_name', 'last_name','email','city','address','phone_num','terms_agreed']
 
+
 class UserCreationForm(UserCreationForm):
     username = forms.EmailField(required=True,label='Email',validators=[])
     first_name = forms.CharField(required=True,label='First Name')
     last_name = forms.CharField(required=True,label='Last Name')
+
+    password2 = forms.CharField(
+        label=_("Password confirmation"),
+        widget=forms.PasswordInput(attrs={'autocomplete': 'new-password'}),
+        strip=False,
+        help_text=_("Enter the same password as before, for verification."),
+    )
+
     class Meta:
         model= User
         fields = ['first_name','last_name','username','password1','password2']
@@ -41,5 +52,27 @@ class UserCreationForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+class ContactUs(forms.ModelForm):
+    first_name = forms.CharField(label='שם פרטי')
+    email = forms.EmailField(label='אימייל')
+
+    class Meta:
+        model = Lead
+        fields = ['first_name','last_name','phone_number','email','message']
+
+
+class ProfilePageForm(forms.ModelForm):
+    user = forms.ModelChoiceField(queryset=User.objects.all(),widget=HiddenInput)
+    profile_pic = forms.FileField(required=False)
+    age = forms.IntegerField(min_value=0,required=True)
+    bio = forms.Textarea()
+    linked_in_url = forms.URLField(required=False)
+    class Meta:
+        model = Profile
+        fields = ('profile_pic','age','bio','linked_in_url')
+
+
+
 
 

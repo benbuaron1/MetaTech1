@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;420;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 html, button, p, div {
-    font-family: Calibri;
+    font-family: 'Rubik', sans-serif;
 }
 
 .containter_div_row {
@@ -83,7 +85,9 @@ html, button, p, div {
         flex-direction: column;
         z-index: 0;
         position: static;
-        background-image: linear-gradient(to right, #021B79, #0575E6);
+        /*background-image: linear-gradient(to right, #021B79, #0575E6);*/
+        background-image:linear-gradient(180deg, rgb(70,107,255) 12%, rgb(111,141,255) 37%, rgb(182,198,255) 63%, rgb(255,255,255) 81%, rgba(251,251,251,1) 93%)
+        /*background-image: linear-gradient(180deg, rgba(0,0,0,1) 12%, rgba(47,47,47,1) 37%, rgba(127,127,128,1) 63%, rgba(222,222,222,1) 81%, rgba(251,251,251,1) 93%)*/
 
     }
 
@@ -122,8 +126,24 @@ html, button, p, div {
 }
 
 .join_button {
+    font-family:"Rubik",'sans-serif';
     width: 130px;
     margin: auto;
+    background-color: silver;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: large;
+
+
+}
+
+.join_button:hover {
+    background-color: white;
+}
+
+.join_button:active {
+    transform: scaleY(0.5%);
 }
 
 .menu_button_regular {
@@ -158,7 +178,7 @@ html, button, p, div {
     transition-duration: 0.3s;
     /* background-color: rgb(160, 126, 255); */
     background-color: rgba(160, 126, 255, 0);
-    color: #1b25de;
+    color: #030513;
     cursor: pointer;
     padding-left: 2%;
     padding-right: 2%;
@@ -172,8 +192,9 @@ html, button, p, div {
 }
 
 .option_button_1:hover {
-    background-image: linear-gradient(to right, #021B79, #0575E6);
+    /*background-image: linear-gradient(0deg, rgba(0,0,0,1) 12%, rgba(47,47,47,1) 37%, rgba(127,127,128,1) 63%, rgba(222,222,222,1) 81%, rgba(251,251,251,1) 93%);*/
     color: white;
+    background-color: gray;
 
 }
 
