@@ -180,7 +180,7 @@ html, button, p, div {
 
 .menu_button_regular {
     display: block;
-    font-size: 27px;
+    font-size: 25px;
     border-color: rgba(160, 126, 255, 0);
     transition-duration: 0.3s;
     /* background-color: rgb(160, 126, 255); */
@@ -220,6 +220,7 @@ html, button, p, div {
     margin-top: 6%;
     margin-bottom: 6%;
     box-shadow: rgba(126, 125, 125, 0.7) 12px 12px 12px;
+    /*color: rgba(81, 162, 252, 0.07)*/
     width: 305px;
 
 }
@@ -227,7 +228,8 @@ html, button, p, div {
 .option_button_1:hover {
     /*background-image: linear-gradient(0deg, rgba(0,0,0,1) 12%, rgba(47,47,47,1) 37%, rgba(127,127,128,1) 63%, rgba(222,222,222,1) 81%, rgba(251,251,251,1) 93%);*/
     color: white;
-    background-image: url("free-space-background-07Fixed02.jpg");
+    /*background-image: url("free-space-background-07Fixed02.jpg");*/
+    background-color: #51A2FC51;
     -moz-background-size: contain;
 }
 
@@ -275,6 +277,13 @@ html, button, p, div {
 
 .logomenu{
     padding-bottom: 3px;
+}
+
+.formss {
+    text-align: center;
+    margin-right: 30%;
+    margin-left: 30%;
+    background-color: rgba(255, 255, 255, 0.25);
 }
 
 

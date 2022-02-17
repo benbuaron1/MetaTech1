@@ -10,7 +10,9 @@
     <title>{% block title_clock %} MetaTech {% endblock %}</title>
     <link href="{% static 'meta_app/styles2.css' %}" rel="stylesheet"/>
     <link rel="icon" type="image/x-icon" href="{% static 'meta_app/MetaIconColor.png' %}">
-    <script src="{% static 'meta_app/script2.js' %}"></script>
+    <script src="{% static 'meta_app/script2.js' %}">
+
+    </script>
 
 </head>
 <!--{#<nav class="topnav" id="myTopnav" style="background-image: linear-gradient(to right, rgba(2,27,121,0.65), rgba(5,117,230,0.67)) ;">#}-->
@@ -36,7 +38,7 @@
             <button class="menu_button_regular" onclick="location.href='/personal_page'">
                 שלום, {{ user.first_name }}</button>
             <button class="menu_button_regular" onclick="location.href='/'"><img
-                    src="{% static 'meta_app/MetaIconColor.png' %}" style="width: 58px"></button>
+                    src="{% static 'meta_app/MetaIconColor.png' %}" style="width: 58px;"></button>
         </nav1>
 
 

@@ -1,15 +1,17 @@
 {% extends 'base2.html' %}
-
+{% load static %}
 {% block content_block %}
 {% if user.is_authenticated %}
 You are already logged in, go back
 {% else %}
-<center><br><br><br><br><br><br>
-<h2>Login</h2>
+<div style="background-image: url({% static 'meta_app/free-space-background-07Fixed02.jpg' %}); padding-top: 5%; padding-bottom: 60%">
+<center>
+<h2 style="color: white">התחבר</h2>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Login</button>
 </form></center>
 {% endif %}
+</div>
 {% endblock %}

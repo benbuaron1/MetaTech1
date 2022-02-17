@@ -71,7 +71,7 @@ class ProfilePageForm(forms.ModelForm):
     terms_agreed = forms.BooleanField(required=True)
     class Meta:
         model = Profile
-        fields = ('profile_pic','age','bio','linked_in_url','terms_agreed')
+        fields = ('profile_pic','age','linked_in_url','bio','terms_agreed')
 
 
 

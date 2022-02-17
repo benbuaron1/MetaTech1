@@ -4,19 +4,20 @@
 
 {% block content_block %}
 
-<body style="background-color:white;">
+<body>
+<div  style="background-image: url({% static 'meta_app/free-space-background-07Fixed02.jpg' %}); padding-top: 5%; padding-bottom: 22%">
 
-<br><br><br><br><br><br><br>
     {% if user.is_authenticated %}
-<h1 style="text-align:center">Create your profile</h1>
+<h1 style="text-align:center; color: white">Create your profile</h1>
 <hr>
-<div style="margin-right:20%;margin-left:40%">
+<div style="margin-right:30%;margin-left:30%;background-color: rgba(255,255,255,0.37);text-align: center;padding:10px">
 <form action="{% url 'create_profile' %}" method="post" style="margin-top:3%;">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Submit" class="btn btn-secondary">
     {% endif %}
 </form>
+</div>
 </div>
 
 
