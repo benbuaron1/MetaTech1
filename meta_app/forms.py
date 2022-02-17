@@ -68,9 +68,10 @@ class ProfilePageForm(forms.ModelForm):
     age = forms.IntegerField(min_value=0,required=True)
     bio = forms.Textarea()
     linked_in_url = forms.URLField(required=False)
+    terms_agreed = forms.BooleanField(required=True)
     class Meta:
         model = Profile
-        fields = ('profile_pic','age','bio','linked_in_url')
+        fields = ('profile_pic','age','bio','linked_in_url','terms_agreed')
 
 
 

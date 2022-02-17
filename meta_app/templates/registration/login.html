@@ -1,6 +1,9 @@
 {% extends 'base2.html' %}
 
 {% block content_block %}
+{% if user.is_authenticated %}
+You are already logged in, go back
+{% else %}
 <center><br><br><br><br><br><br>
 <h2>Login</h2>
 <form method="post">
@@ -8,5 +11,5 @@
     {{ form.as_p }}
     <button type="submit">Login</button>
 </form></center>
-
+{% endif %}
 {% endblock %}

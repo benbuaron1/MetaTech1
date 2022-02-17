@@ -50,9 +50,17 @@ class Profile(MetaModel):
     age = models.IntegerField(max_length=10,null=False,blank=False)
     bio = models.TextField(max_length=1000,null=True,blank=True)
     linked_in_url = models.CharField(max_length=1000,null=True,blank=True)
+    terms_agreed = models.BooleanField(null=False,blank=False)
 
     def __str__(self):
         return str(self.user)
+
+
+class Course(MetaModel):
+    name = models.CharField(max_length=512,null=False,blank=False)
+    teacher = models.ForeignKey(Profile,on_delete=RESTRICT,null=False,blank=False)
+    description = models.TextField(max_length=512,null=False,blank=False)
+
 
 
 
