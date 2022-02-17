@@ -1,17 +1,25 @@
 {% extends 'base2.html' %}
 {% load static %}
 {% block content_block %}
-{% if user.is_authenticated %}
-You are already logged in, go back
-{% else %}
-<div style="background-image: url({% static 'meta_app/free-space-background-07Fixed02.jpg' %}); padding-top: 5%; padding-bottom: 60%">
-<center>
-<h2 style="color: white">התחבר</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-</form></center>
-{% endif %}
-</div>
+    {% if user.is_authenticated %}
+        You are already logged in, go back
+    {% else %}
+        <div style="display: flex; background-image: url({% static 'meta_app/free-space-background-07Fixed02.jpg' %});
+                background-repeat: no-repeat; background-size: 105%; padding-bottom: 50%; overflow-y: hidden"; >
+
+            <div style="display: flex; flex-direction: column; justify-items: center; align-items: center; margin: auto; margin-top: 8%
+            ; background-color:rgba(255,255,255,0.27); width: 15%; padding-bottom: 1%">
+                <h2 style="color: white">התחבר</h2>
+                <form method="post" style="display: flex; flex-direction: column">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="join_button" type="submit" style="width: 30%; align-self: center; margin-top: 5%">Login</button>
+                    <a href="#" style="align-self: center; margin-top: 10%">Forgot your password?</a>
+                </form>
+
+        </div>
+        </div>
+    {% endif %}
+
+
 {% endblock %}
