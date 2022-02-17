@@ -9,39 +9,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{% block title_clock %} MetaTech {% endblock %}</title>
     <link href="{% static 'meta_app/styles2.css' %}" rel="stylesheet"/>
+    <link rel="icon" type="image/x-icon" href="{% static 'meta_app/MetaIconColor.png' %}">
     <script src="{% static 'meta_app/script2.js' %}"></script>
 
 </head>
 <!--{#<nav class="topnav" id="myTopnav" style="background-image: linear-gradient(to right, rgba(2,27,121,0.65), rgba(5,117,230,0.67)) ;">#}-->
-    {% if user.is_authenticated %}
-<nav class="topnav" id="myTopnav"">
-    <nav2 style="z-index: 2; padding: 2%; background-color: rgba(255,255,255,0)">
-        <a href="javascript:void(0);" class="container icon" onclick="myFunction(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </a>
-    </nav2>
-    <nav1 class="topnav">
-        <button class="menu_button_regular" onclick="location.href='/logout'">התנתק</button>
-        {% if not user.profile.id %}
-        <button class="menu_button_regular" onclick="location.href='/create_profile'">צור פרופיל</button>
-        {% else %}
-        <button class="menu_button_regular" onclick="location.href='/personal_page'">הפרופיל שלי</button>
-        {% endif %}
-        <button class="menu_button_regular" onclick="location.href='/contact_us'">צור קשר</button>
-        <button class="menu_button_regular">מי אנחנו</button>
-        <button class="menu_button_regular">הקורסים שלי</button>
-        <button class="menu_button_regular" onclick="location.href='/personal_page'">שלום, {{user.first_name}}</button>
-        <button class="menu_button_regular" onclick="location.href='/'"><img src="{% static 'meta_app/MetaColor.png' %}" style="width: 100%;padding: 0"></button>
-    </nav1>
+{% if user.is_authenticated %}
+    <nav class="topnav" id="myTopnav">
+        <nav2 style="z-index: 2; padding: 2%; background-color: rgba(255,255,255,0)">
+            <a href="javascript:void(0);" class="container icon" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </a>
+        </nav2>
+        <nav1 class="topnav">
+            <button class="menu_button_regular" onclick="location.href='/logout'">התנתק</button>
+            {% if not user.profile.id %}
+                <button class="menu_button_regular" onclick="location.href='/create_profile'">צור פרופיל</button>
+            {% else %}
+                <button class="menu_button_regular" onclick="location.href='/personal_page'">הפרופיל שלי</button>
+            {% endif %}
+            <button class="menu_button_regular" onclick="location.href='/contact_us'">צור קשר</button>
+            <button class="menu_button_regular">מי אנחנו</button>
+            <button class="menu_button_regular">הקורסים שלי</button>
+            <button class="menu_button_regular" onclick="location.href='/personal_page'">
+                שלום, {{ user.first_name }}</button>
+            <button class="menu_button_regular" onclick="location.href='/'"><img
+                    src="{% static 'meta_app/MetaIconColor.png' %}" style="width: 58px"></button>
+        </nav1>
 
 
-</nav>
+    </nav>
 
-{%else%}
-<nav class="topnav" id="myTopnav" style="background-color: black;">
-    <nav2 style="z-index: 2; padding: 2%; background-color: #466BFFFF">
+{% else %}
+    <nav class="topnav" id="myTopnav">
+    <nav2 style="z-index: 2; padding: 2%">
         <a href="javascript:void(0);" class="container icon" onclick="myFunction(this)">
             <div class="bar1"></div>
             <div class="bar2"></div>
@@ -56,9 +59,10 @@
         <button class="menu_button_regular">שירותים</button>
         <button class="menu_button_regular" onclick="location.href='/sign_up'">הרשמה</button>
         <button class="menu_button_regular" onclick="location.href='/login'">התחבר</button>
-        <button class="menu_button_regular" onclick="location.href='/'"><img src="{% static 'meta_app/MetaLogo.png' %}" style="width: 100%"></button>
+        <button class="menu_button_regular logomenu" onclick="location.href='/'"><img
+                src="{% static 'meta_app/MetaIconColor.png' %}" style="width: 43px"></button>
     </nav1>
-    {%endif%}
+{% endif %}
 
 
 </nav>
