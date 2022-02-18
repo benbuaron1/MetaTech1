@@ -8,11 +8,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{% block title_clock %} MetaTech {% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="{% static 'meta_app/styles2.css' %}" rel="stylesheet"/>
     <link rel="icon" type="image/x-icon" href="{% static 'meta_app/MetaIconColor.png' %}">
     <script src="{% static 'meta_app/script2.js' %}">
 
     </script>
+
 
 </head>
 <!--{#<nav class="topnav" id="myTopnav" style="background-image: linear-gradient(to right, rgba(2,27,121,0.65), rgba(5,117,230,0.67)) ;">#}-->
@@ -38,7 +40,7 @@
             <button class="menu_button_regular" onclick="location.href='/personal_page'">
                 שלום, {{ user.first_name }}</button>
             <button class="menu_button_regular" onclick="location.href='/'"><img
-                    src="{% static 'meta_app/MetaIconColor.png' %}" style="width: 58px; padding-bottom: 2%"></button>
+                    src="{% static 'meta_app/MetaIconColor.png' %}" style="width: 43px;"></button>
         </nav1>
 
 
@@ -55,7 +57,7 @@
     </nav2>
     <nav1 class="topnav">
 
-        <button class="menu_button_regular">צור קשר</button>
+        <button class="menu_button_regular" onclick="location.href='/contact_us'">צור קשר</button>
         <button class="menu_button_regular">מי אנחנו</button>
         <button class="menu_button_regular">הקורסים</button>
         <button class="menu_button_regular">שירותים</button>

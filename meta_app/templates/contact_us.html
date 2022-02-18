@@ -7,14 +7,14 @@
 <body >
 
 <div style="background-image: url({% static 'meta_app/free-space-background-07Fixed02.jpg' %}); padding-top: 5%; padding-bottom: 28%;">
-<h1 style="text-align:center">Contact Us!</h1>
+<h1 style="text-align:center;color: white">צרו איתנו קשר</h1>
 <hr>
 <div style="margin-right:30%;margin-left:30%">
 <form action="{% url 'contact_us' %}" method="post" style=" background-color: rgba(255,255,255,0.27);text-align: center;padding: 10px">
 
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" class="join_button">
 </form>
 </div>
 </div>

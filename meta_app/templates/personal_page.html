@@ -2,19 +2,22 @@
 {% load static %}
 
 {% block content_block %}
-<br><br><br><br><br><br><br><br><br>
-    <body style="color: black; text-align: center">
+
+    <body style="color: black; text-align: center;display: flex">
+    <div style="background-image:url({% static 'meta_app/free-space-background-07Fixed02.jpg' %}); padding-top: 8%;padding-bottom: 35%;text-align: center;color: white">
     {% if not user.is_staff %}
-    <h1 style="text-align: center">דף התלמיד של {{user.first_name}}</h1>
-    {% else %}}
-    <h1 style="text-align: center">דף המורה של {{user.first_name}}</h1>
-    {% endif %}}
-    {{user.profile.profile_pic}}
-    <a href="{{user.profile.linked_in_url}}" target="_blank">Linked In Profile</a>
-    {{user.profile.age}}
-    {{user.profile.bio}}
-    <div style="border: 1px solid black;width: 60%">
-        <p>רשימת הקורסים שלי</p>
+    <h1 style="text-align: center;color: white">דף התלמיד של {{user.first_name}}</h1>
+    {% else %}
+    <h1 style="text-align: center;color: white">דף המורה של {{user.first_name}}</h1>
+    {% endif %}
+    <img src="{{user.profile.profile_pic}}" style="width: 10%"><br><br>
+    <a href="{{user.profile.linked_in_url}}" target="_blank"><i class="fa fa-linkedin-square" style="font-size: 36px"></i></a><br><br>
+    Age: {{user.profile.age}} <br>
+        <br>
+    About me: {{user.profile.bio}}<br>
+    <div style="border: 1px solid black;width: 60%;display: flex;justify-content: center;margin-left: 20%">
+        <p style="text-align: center">רשימת הקורסים שלי</p>
+    </div>
     </div>
     </body>
 

@@ -34,20 +34,23 @@ def sign_up(request):
 
 # @admin_only
 def index2(request):
-    group = None
-    if request.user.groups.exists():
-        group = request.user.groups.all()[0].name
-    if group == 'admin':
-        pass
-    return render(request, 'index2.html',{'group':group})
+
+    return render(request, 'index2.html')
 
 
 @login_required
 def personal_page(request):
+    group = None
+    if request.user.groups.exists():
+        group = request.user.groups.all()[0].name
+    if group == 'admin':
+        return render(request,'admin_page.html')
     profile = Profile.user
+
     return render(request, 'personal_page.html', {'profile': profile})
 
 def contact_us(request):
+
     if request.method == 'GET':
         form = ContactUs()
         return render(request, 'contact_us.html', {'form': form})

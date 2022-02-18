@@ -37,7 +37,7 @@ class Lead(MetaModel):
     last_name = models.CharField(max_length=128,null=False,blank=False)
     email = models.EmailField()
     phone_number = models.CharField(max_length=11,null=False,blank=True)
-    message = models.CharField(max_length=512, null=True,blank=True)
+    message = models.TextField(max_length=512, null=True,blank=True)
     spoken_with = models.BooleanField(null=True)
 
     def __str__(self):
@@ -46,11 +46,13 @@ class Lead(MetaModel):
 
 class Profile(MetaModel):
     user = models.OneToOneField(User,on_delete=CASCADE,null=True)
-    profile_pic = models.FileField(null=True,blank=True)
+    profile_pic = models.ImageField(max_length=1500,upload_to='meta_app/static/images',null=True,blank=True,default='https://cdn3.vectorstock.com/i/1000x1000/52/97/image-a-person-icon-people-icon-on-blue-vector-27565297.jpg')
     age = models.IntegerField(max_length=10,null=False,blank=False)
     bio = models.TextField(max_length=1000,null=True,blank=True)
     linked_in_url = models.CharField(max_length=1000,null=True,blank=True)
     terms_agreed = models.BooleanField(null=False,blank=False)
+    phone_numer = models.CharField(max_length=15,null=True,blank=True)
+    city = models.CharField(max_length=128,null=True,blank=True)
 
     def __str__(self):
         return str(self.user)
@@ -60,6 +62,11 @@ class Course(MetaModel):
     name = models.CharField(max_length=512,null=False,blank=False)
     teacher = models.ForeignKey(Profile,on_delete=RESTRICT,null=False,blank=False)
     description = models.TextField(max_length=512,null=False,blank=False)
+
+class CourseByStudnet(MetaModel):
+    course = models.ForeignKey(Course,on_delete=RESTRICT,null=False,blank=False)
+    student = models.ForeignKey(Profile,on_delete=RESTRICT,null=False,blank=False)
+    grade = models.IntegerField(null=True,blank=True)
 
 
 

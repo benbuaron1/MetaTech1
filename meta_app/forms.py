@@ -54,8 +54,8 @@ class UserCreationForm(UserCreationForm):
         return user
 
 class ContactUs(forms.ModelForm):
-    first_name = forms.CharField(label='שם פרטי')
-    email = forms.EmailField(label='אימייל')
+    # first_name = forms.CharField(label='שם פרטי')
+    # email = forms.EmailField(label='אימייל')
 
     class Meta:
         model = Lead
@@ -64,14 +64,15 @@ class ContactUs(forms.ModelForm):
 
 class ProfilePageForm(forms.ModelForm):
     user = forms.ModelChoiceField(queryset=User.objects.all(),widget=HiddenInput)
-    profile_pic = forms.FileField(required=False)
+    profile_pic = forms.FileField(required=False,widget=HiddenInput)
     age = forms.IntegerField(min_value=0,required=True)
     bio = forms.Textarea()
     linked_in_url = forms.URLField(required=False)
     terms_agreed = forms.BooleanField(required=True)
+    phone_numer = forms.CharField(required=True,validators=[])
     class Meta:
         model = Profile
-        fields = ('profile_pic','age','linked_in_url','bio','terms_agreed')
+        fields = ('phone_numer','city','age','linked_in_url','bio','terms_agreed')
 
 
 
