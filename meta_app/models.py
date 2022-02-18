@@ -53,6 +53,7 @@ class Profile(MetaModel):
     terms_agreed = models.BooleanField(null=False,blank=False)
     phone_numer = models.CharField(max_length=15,null=True,blank=True)
     city = models.CharField(max_length=128,null=True,blank=True)
+    credits = models.IntegerField(max_length=1000,null=True,blank=True,default=0)
 
     def __str__(self):
         return str(self.user)

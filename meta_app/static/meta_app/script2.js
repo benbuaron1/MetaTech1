@@ -26,12 +26,11 @@ function div_opener() {
 }
 
 function Pychanger() {
-  document.getElementById('div_to_change').innerHTML = 'שפת פייתון היא שפת התכנות הפופולרית ביותר היום בקרב מתכנתים! רוצים להצטרף לקהילה? בואו ללמוד איתנו<br><br><br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Python_logo_and_wordmark.svg/2560px-Python_logo_and_wordmark.svg.png" style="width: 60%">';
-  document.getElementById('div_to_change').style.fontSize = '30px';
+
+  document.getElementById('div_to_change').innerHTML = 'שפת פייתון היא שפת התכנות הפופולרית ביותר היום בקרב מתכנתים! רוצים להצטרף לקהילה? בואו ללמוד איתנו<br><br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Python_logo_and_wordmark.svg/2560px-Python_logo_and_wordmark.svg.png" style="width: 60%">';
   document.getElementById('div_to_change').style.textAlign = 'center';
   // document.getElementById('div_to_change').style.backgroundColor= '#51A2FC51';
-  // document.getElementById('div_to_change').style.padding= '40px';
-  document.getElementById('div_to_change').style.fontSize = '60px'
+document.getElementById('div_to_change').style.fontSize = '30px';
   document.getElementById('javabtn').style.backgroundColor = 'white';
   document.getElementById('pythonbtn').style.backgroundColor = '#51A2FC51';
   document.getElementById('HTMLbtn').style.backgroundColor = 'white';

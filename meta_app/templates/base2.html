@@ -37,8 +37,13 @@
             <button class="menu_button_regular" onclick="location.href='/contact_us'">צור קשר</button>
             <button class="menu_button_regular">מי אנחנו</button>
             <button class="menu_button_regular">הקורסים שלי</button>
+            {% if not user.profile.id %}
+            <button class="menu_button_regular" onclick="location.href='/create_profile'">
+                שלום, {{ user.first_name }}</button>
+            {% else %}
             <button class="menu_button_regular" onclick="location.href='/personal_page'">
                 שלום, {{ user.first_name }}</button>
+            {% endif %}
             <button class="menu_button_regular" onclick="location.href='/'"><img
                     src="{% static 'meta_app/MetaIconColor.png' %}" style="width: 43px;"></button>
         </nav1>
@@ -59,7 +64,7 @@
 
         <button class="menu_button_regular" onclick="location.href='/contact_us'">צור קשר</button>
         <button class="menu_button_regular">מי אנחנו</button>
-        <button class="menu_button_regular">הקורסים</button>
+        <button class="menu_button_regular" onclick="location.href='/#courses'">הקורסים</button>
         <button class="menu_button_regular">שירותים</button>
         <button class="menu_button_regular" onclick="location.href='/sign_up'">הרשמה</button>
         <button class="menu_button_regular" onclick="location.href='/login'">התחבר</button>

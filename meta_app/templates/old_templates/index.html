@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content_block %}
+  <body style="background-color:grey">
+      <div style="display: flex; flex-direction: column">
+        <div style="display: flex; flex-direction: row">
+          <div style="display: flex; flex-direction: column">
+            <img
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: auto;
+                margin-top: 7%;
+                width: 35%;
+              "
+              src="{% static 'meta_app/logo3.png' %}"
+              class="logo"
+            />
+            <br />
+            <div class="transbox1">
+              <div
+                style="
+                  margin: 3%;
+                  text-align: center;
+                  font-family: 'Lucida Sans', 'Lucida Sans Regular',
+                    'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+                    sans-serif;
+                "
+              >
+                high-techs is an online learning method for every one that want
+                to learn code <br />
+                Our goal is to make coding aproachable to each person that wants
+                to start learning
+              </div>
+            </div>
+            <h1
+              style="
+                text-align: center;
+                margin-top: 2%;
+                font-size: 3vw;
+                color: #ff509e;
+              "
+            >
+              Video Examples:
+            </h1>
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular',
+                  'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+                  sans-serif;
+              "
+            >
+              <iframe
+                style="margin: 3%"
+                width="20%"
+                height="70%"
+                src="https://www.youtube.com/embed/rfscVS0vtbw"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+
+              <iframe
+                style="margin: 3%"
+                width="20%"
+                height="70%"
+                src="https://www.youtube.com/embed/BJ-VvGyQxho"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+
+              <iframe
+                style="margin: 3%"
+                width="20%"
+                height="70%"
+                src="https://www.youtube.com/embed/XHbuQf-DWIk"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <div class="transbox2">
+            <div style="margin: 3%">JOIN THE FREE COURSE</div>
+            <button onclick="location.href='/sign_up'" class="join_button_regular">CLICK HERE</button>
+            <div style="font-size: 1.5vw; margin-left: 7%; margin-right: 7%">
+              Choose A Language And Start Learning With Our Instructors:
+              <div>
+                <img src="{% static 'meta_app/py.png' %}" width="20%" class="language" />
+                <img src="{% static 'meta_app/java.png' %}" width="20%" class="language" />
+                <img src="{% static 'meta_app/htmlcss.png' %}" width="20%" class="language" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="display: flex">
+          <div class="transbox3" style="flex-direction: column">
+            Our clients
+            <div
+              style="
+                flex-direction: row;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+                flex-basis: auto;
+              "
+            >
+              <img src="{% static 'meta_app/campus.png' %}" class="client_photo" />
+              <img src="{% static 'meta_app/cod1.png' %}" class="client_photo" />
+              <img src="{% static 'meta_app/edu.png' %}" class="client_photo" />
+              <img src="{% static 'meta_app/iati.png' %}" class="client_photo" />
+              <img src="{% static 'meta_app/jb.png' %}" class="client_photo" />
+              <img src="{% static 'meta_app/open.png' %}" class="client_photo" />
+              <img src="{% static 'meta_app/tlv.png' %}" class="client_photo" />
+            </div>
+          </div>
+          >
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+  </body>
+
+{% endblock %}
+

@@ -156,16 +156,18 @@ html, button, p, div {
 
 .join_button {
     color: #000000;
-    background-image: linear-gradient(90deg, #364e9f, white);
+    /*background-image: linear-gradient(90deg, #364e9f, white);*/
+    background-color: rgba(135, 210, 253, 0.8);
     width: 170px;
     margin: auto;
-    background-color: silver;
-    height: 50px;
+    /*background-color: silver;*/
+    height: 40px;
     border-radius: 20px;
     border: none;
     cursor: pointer;
     font-size: large;
     box-shadow: rgba(255, 255, 255, 0.39) 3px 3px 3px;
+    font-family: 'Rubik', sans-serif;
 
 
 }
