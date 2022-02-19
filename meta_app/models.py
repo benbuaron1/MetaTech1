@@ -42,7 +42,11 @@ class Lead(MetaModel):
 
     def __str__(self):
         return f"{self.first_name} {self.phone_number}"
+types = (
+    ('תלמיד','תלמיד'),
+    ('מורה','מורה'),
 
+)
 
 class Profile(MetaModel):
     user = models.OneToOneField(User,on_delete=CASCADE,null=True)
@@ -54,6 +58,7 @@ class Profile(MetaModel):
     phone_numer = models.CharField(max_length=15,null=True,blank=True)
     city = models.CharField(max_length=128,null=True,blank=True)
     credits = models.IntegerField(max_length=1000,null=True,blank=True,default=0)
+    type = models.CharField(max_length=128,null=False,blank=False,choices=types)
 
     def __str__(self):
         return str(self.user)
@@ -70,6 +75,15 @@ class CourseByStudnet(MetaModel):
     grade = models.IntegerField(null=True,blank=True)
 
 
+class StudentTeacherLesson(MetaModel):
+    student = models.ForeignKey(Profile,on_delete=RESTRICT,related_name='תלמיד')
+    teacher = models.ForeignKey(Profile,on_delete=RESTRICT,related_name='מורה')
+    subject = models.TextField(max_length=1028, null=False, blank=False)
+    record_url = models.URLField(blank=True, null=True)
+    lesson_date = models.DateField(null=False,blank=False)
+
+    def __str__(self):
+        return f"{self.student} by {self.teacher} at {self.lesson_date}"
 
 
 

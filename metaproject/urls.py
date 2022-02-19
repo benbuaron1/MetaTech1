@@ -16,10 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
+# login_action = False
+# url1 = ''
+#
+# if login_action is True:
+#     url1 = path('', auth_views.LoginView.as_view())
+# else:
+#     url1 =
 
 urlpatterns = [
-    path('login', auth_views.LoginView.as_view()),
     path('logout', auth_views.logout_then_login),
+    path('login', auth_views.LoginView.as_view()),
     path('',include('meta_app.urls')),
     path('admin/', admin.site.urls),
 ]

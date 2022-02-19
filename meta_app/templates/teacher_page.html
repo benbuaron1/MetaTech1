@@ -1,0 +1,104 @@
+{% extends "base2.html" %}
+{% load static %}
+
+{% block content_block %}
+
+<body style="color: black; text-align: center;display: flex">
+<div id="mySidenav" class="sidenav">
+    <button class="icon_button_student" onclick="location.href='/'"><img
+            src="{% static 'meta_app/MetaIconColor.png' %}"
+            style="width: 43px; transform: translateY(-3px); padding-top: 0%">
+    </button>
+<!--    <button style="background-color: white" onclick="myBioFunc()">הפרטים שלי</button>-->
+<!--    <button onclick="myTeachersFunc()">המורים שלי</button>-->
+<!--    <button onclick="myLessonsFunc()">היסטוריית שיעורים</button>-->
+    <a href="#myBio">הפרטים שלי</a>
+    <a href="#myTeachers">התלמידים שלי</a>
+    <a href="#myLessons">היסטוריית שיעורים</a>
+    <a href="#">הקורסים שלי</a>
+    <a href="#">ניצול קרדיטים</a>
+</div>
+<div style="background-image:url({% static 'meta_app/free-space-background-07Fixed02.jpg' %}); padding-top: 8%;padding-bottom: 35%;text-align: center;color: white">
+    <div class="transbox_student">
+        <h1 style="text-align: center;color: white">דף התלמיד של  {{user.first_name}}</h1>
+
+        <img src="{{user.profile.profile_pic}}" style="width: 10%"><br><br>
+<!--        <a href="{{user.profile.linked_in_url}}" target="_blank"><i class="fa fa-linkedin-square"-->
+<!--                                                                    style="font-size: 36px"></i></a><br><br>-->
+        <div id="myBio">
+            <h3>   About me:</h3>
+            <hr width="120px">
+            <ul style="list-style: none;">
+                <li>My Credits: {{user.profile.credits}} 💸 </li>
+                <br>
+                <li>Age: {{user.profile.age}} </li>
+                <br>
+                <li>Phone Number: {{user.profile.phone_numer}}</li>
+                <br>
+                <li>Email: {{user}}</li>
+                {{user.profile.bio}}
+            </ul>
+        </div>
+<!--        <div style="border: 1px solid black;width: 60%;display: flex;justify-content: center;margin-left: 20%">-->
+<!--            <p style="text-align: center">רשימת הקורסים שלי</p>-->
+
+<!--            {{user.profile.type}}-->
+
+<!--        </div>-->
+<!--        <div id="myTeachers" style="visibility: hidden">       -->
+            <div id="myTeachers" style="visibility: visible">
+            <h3>My Students: </h3>
+            <table style="text-align: center;">
+                <strong><tr>
+                    <th>Teacher Name:</th>
+                    <th>Phone Number:</th>
+                    <th>Email:</th>
+                </tr></strong>
+                {% for l in students %}
+                <tr>
+                    <td>{{l.user.first_name}} {{l.user.first_name}}</td>
+                    <td>{{l.phone_numer}}</td>
+                    <td>{{user}}</td>
+                </tr>
+                {% endfor%}
+            </table>
+<!--            <ul style="list-style: none">-->
+<!--                {% for l in teachers %}-->
+<!--                <li> {{l.user.first_name}} {{l.user.last_name}} - {{l}} - {{l.phone_numer}}</li>-->
+<!--                {% endfor %}-->
+<!--            </ul>-->
+        </div>
+<!--        <div id="myLessons" style="visibility: hidden">-->
+        <div id="myLessons" style="visibility: visible">
+            <h3>My lessons: </h3>
+            <table style="text-align: center">
+                <strong><tr>
+                    <th>Lesson Date:</th>
+                    <th>Teacher:</th>
+                    <th>Subject:</th>
+                    <th>Record Url:</th>
+                </tr></strong>
+                {% for l in lessons %}
+                <tr>
+                    <td>{{l.lesson_date}}</td>
+                    <td>{{l.student.user.first_name}} {{l.student.user.last_name}}</td>
+                    <td>{{l.subject}}</td>
+                    <td>{{l.record_url}}</td>
+                </tr>
+                {% endfor%}
+            </table>
+
+<!--            <ul style="list-style: none">-->
+<!--                {% for l in lessons %}-->
+<!--                <li> {{l.teacher.user.first_name}} at {{l.lesson_date}} about {{l.subject}}</li>-->
+<!--                {% endfor %}-->
+<!--            </ul>-->
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+
+{% endblock %}

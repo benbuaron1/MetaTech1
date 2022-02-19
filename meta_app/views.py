@@ -32,20 +32,36 @@ def sign_up(request):
         form = UserCreationForm()
     return render(request, 'sign_up.html', {'form': form})
 
+# class LoginView(SuccessURLAllowedHostsMixin, FormView):
+#
+#     template_name = 'index2.html'
+
 # @admin_only
 def index2(request):
-
     return render(request, 'index2.html')
 
 
 @login_required
 def personal_page(request):
     group = None
+    profile = Profile.user
     if request.user.groups.exists():
         group = request.user.groups.all()[0].name
     if group == 'admin':
-        return render(request,'admin_page.html')
-    profile = Profile.user
+        return render(request,'admin_page.html',)
+    elif group == 'student':
+        lessons = StudentTeacherLesson.objects.filter(student=request.user.profile)
+        teachers_set = set([l.teacher for l in lessons])
+        if request.method == 'GET':
+            return render(request,'student_page.html',context={'lessons':lessons,'teachers':teachers_set})
+        elif request.method == 'POST':
+            pass
+    elif group == 'teacher':
+        lessons = StudentTeacherLesson.objects.filter(teacher=request.user.profile)
+        students_set = set([l.student for l in lessons])
+        return render(request,'teacher_page.html',{'lessons':lessons,'students':students_set})
+
+
 
     return render(request, 'personal_page.html', {'profile': profile})
 

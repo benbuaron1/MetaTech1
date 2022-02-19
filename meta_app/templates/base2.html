@@ -46,7 +46,7 @@
                     שלום, {{ user.first_name }}</button>
             {% endif %}
             <button class="menu_button_regular" onclick="location.href='/'"><img
-                    src="{% static 'meta_app/MetaIconColor.png' %}" style="width: 43px; transform: translateY(-3px)">
+                    src="{% static 'meta_app/MetaIconColor.png' %}" style="width: 43px; transform: translateY(-3px); z-index: 150">
             </button>
         </nav1>
 
@@ -76,8 +76,8 @@
             </div>
         </div>
         <button class="menu_button_regular" onclick="location.href='/sign_up'">הרשמה</button>
-        {#        <button class="menu_button_regular" onclick="location.href='/login'">התחבר</button>#}
-        <button class="menu_button_regular" onclick="document.getElementById('id01').style.display='block'">התחבר
+                <button class="menu_button_regular" onclick="location.href='/login'">התחבר</button>
+<!--        <button class="menu_button_regular" onclick="document.getElementById('id01').style.display='block'">התחבר-->
         </button>
         <button class="menu_button_regular logomenu" onclick="location.href='/'"><img
                 src="{% static 'meta_app/MetaIconColor.png' %}" style="width: 43px; transform: translateY(-3px)">
@@ -86,30 +86,36 @@
     <div id="id01" class="modal">
     <span onclick="document.getElementById('id01').style.display='none'"
           class="close" title="Close Modal">&times;</span>
-        <form class="modal-content animate" action="/action_page.php">
-            <div class="imgcontainer">
-                <img src="{% static 'meta_app/img_avatar2.png' %}" alt="Avatar" class="avatar">
-            </div>
+<!--        <form class="modal-content animate" action="/action_page.php">-->
+<!--            <div class="imgcontainer">-->
+<!--                <img src="{% static 'meta_app/img_avatar2.png' %}" alt="Avatar" class="avatar">-->
+<!--            </div>-->
 
-            <div class="container">
-                <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
+<!--            <div class="container">-->
+<!--                <label for="uname"><b>Username</b></label>-->
+<!--                <input type="text" placeholder="Enter Username" name="uname" required>-->
 
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+<!--                <label for="psw"><b>Password</b></label>-->
+<!--                <input type="password" placeholder="Enter Password" name="psw" required>-->
 
-                <button class="button_login" type="submit">Login</button>
-                <label>
-                    <input type="checkbox" checked="checked" name="remember"> Remember me
-                </label>
-            </div>
+<!--                <button class="button_login" type="submit">Login</button>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" checked="checked" name="remember"> Remember me-->
+<!--                </label>-->
+<!--            </div>-->
 
-            <div class="container" style="background-color:#f1f1f1; ">
-                <button class="button_login cancelbtn" type="button" onclick="document.getElementById('id01').style.display='none'">
-                    Cancel
-                </button>
-                <span class="psw">Forgot <a href="#">password?</a></span>
-            </div>
+<!--            <div class="container" style="background-color:#f1f1f1; ">-->
+<!--                <button class="button_login cancelbtn" type="button" onclick="document.getElementById('id01').style.display='none'">-->
+<!--                    Cancel-->
+<!--                </button>-->
+<!--                <span class="psw">Forgot <a href="#">password?</a></span>-->
+<!--            </div>-->
+<!--        </form>-->
+        <form method="post" style="display: flex; flex-direction: column">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="join_button" type="submit" style="width: 30%; align-self: center; margin-top: 5%">Login</button>
+                    <a href="#" style="align-self: center; margin-top: 10%">Forgot your password?</a>
         </form>
     </div>
 {% endif %}

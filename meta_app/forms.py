@@ -5,7 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.core.validators import EmailValidator, MinLengthValidator
 from django import forms
-from django.forms import HiddenInput
+from django.forms import HiddenInput, DateInput
 
 from .models import *
 from django.core.exceptions import ValidationError
@@ -53,6 +53,8 @@ class UserCreationForm(UserCreationForm):
             user.save()
         return user
 
+
+
 class ContactUs(forms.ModelForm):
     # first_name = forms.CharField(label='שם פרטי')
     # email = forms.EmailField(label='אימייל')
@@ -74,7 +76,8 @@ class ProfilePageForm(forms.ModelForm):
         model = Profile
         fields = ('phone_numer','city','age','linked_in_url','bio','terms_agreed')
 
-
+class MyDateWidget(DateInput):
+    input_type = "date"
 
 
 

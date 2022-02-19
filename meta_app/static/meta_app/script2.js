@@ -227,6 +227,23 @@ window.onclick = function(event) {
   }
 }
 
+function myTeachersFunc() {
+    document.getElementById('myBio').style.visibility = 'hidden';
+    document.getElementById('myTeachers').style.visibility = 'visible';
+    document.getElementById('myLessons').style.visibility = 'hidden';
+}
+function myLessonsFunc() {
+    document.getElementById('myBio').style.visibility = 'hidden';
+    document.getElementById('myTeachers').style.visibility = 'hidden';
+    document.getElementById('myLessons').style.visibility = 'visible';
+}
+
+function myBioFunc() {
+    document.getElementById('myBio').style.visibility = 'visible';
+    document.getElementById('myTeachers').style.visibility = 'visible';
+    document.getElementById('myLessons').style.visibility = 'visible';
+}
+
 
 
 
