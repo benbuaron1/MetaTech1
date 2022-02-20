@@ -20,7 +20,9 @@
 </div>
 <div style="background-image:url({% static 'meta_app/free-space-background-07Fixed02.jpg' %}); padding-top: 8%;padding-bottom: 35%;text-align: center;color: white">
     <div class="transbox_student">
+        <button onclick="location.href='/edit_profile'" style="display: flex;"><i style='font-size:24px' class='fa fa-edit'></i></button>
         <h1 style="text-align: center;color: white">דף התלמיד של  {{user.first_name}}</h1>
+
 
         <img src="{{user.profile.profile_pic}}" style="width: 10%"><br><br>
 <!--        <a href="{{user.profile.linked_in_url}}" target="_blank"><i class="fa fa-linkedin-square"-->
@@ -36,7 +38,8 @@
                 <li>Phone Number: {{user.profile.phone_numer}}</li>
                 <br>
                 <li>Email: {{user}}</li>
-                {{user.profile.bio}}
+                <br>
+                <li>My Bio: {{user.profile.bio}}</li>
             </ul>
         </div>
 <!--        <div style="border: 1px solid black;width: 60%;display: flex;justify-content: center;margin-left: 20%">-->
@@ -48,6 +51,9 @@
 <!--        <div id="myTeachers" style="visibility: hidden">       -->
             <div id="myTeachers" style="visibility: visible">
             <h3>My Teachers: </h3>
+<!--                <label for="searchTeacher">Search Teacher:</label>-->
+<!--                <input id="searchTeacher" type="text">-->
+<!--                <button onclick="location.href='personal_page?searchTeacher='+document.getElementById('searchTeacher').value">Search</button><br><br>-->
             <table style="text-align: center;">
                 <strong><tr>
                     <th>Teacher Name:</th>
@@ -58,7 +64,7 @@
                 <tr>
                     <td>{{l.user.first_name}} {{l.user.first_name}}</td>
                     <td>{{l.phone_numer}}</td>
-                    <td>{{user}}</td>
+                    <td>{{l.user.email}}</td>
                 </tr>
                 {% endfor%}
             </table>
@@ -83,7 +89,11 @@
                     <td>{{l.lesson_date}}</td>
                     <td>{{l.teacher.user.first_name}} {{l.teacher.user.last_name}}</td>
                     <td>{{l.subject}}</td>
-                    <td>{{l.record_url}}</td>
+                    {% if l.record_url %}
+                    <td><a href="{{l.record_url}}" target="_blank">Click</a></td>
+                    {% else %}
+                    <td>Not upload yet</td>
+                    {% endif %}
                 </tr>
                 {% endfor%}
             </table>

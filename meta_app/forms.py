@@ -71,7 +71,7 @@ class ProfilePageForm(forms.ModelForm):
     bio = forms.Textarea()
     linked_in_url = forms.URLField(required=False)
     terms_agreed = forms.BooleanField(required=True)
-    phone_numer = forms.CharField(required=True,validators=[])
+    phone_numer = forms.CharField(required=True,validators=[validate_phone])
     class Meta:
         model = Profile
         fields = ('phone_numer','city','age','linked_in_url','bio','terms_agreed')

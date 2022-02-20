@@ -20,7 +20,8 @@
 </div>
 <div style="background-image:url({% static 'meta_app/free-space-background-07Fixed02.jpg' %}); padding-top: 8%;padding-bottom: 35%;text-align: center;color: white">
     <div class="transbox_student">
-        <h1 style="text-align: center;color: white">דף התלמיד של  {{user.first_name}}</h1>
+        <button onclick="location.href='/edit_profile'" style="display: flex;"><i style='font-size:24px' class='fa fa-edit'></i></button>
+        <h1 style="text-align: center;color: white">דף המורה של  {{user.first_name}}</h1>
 
         <img src="{{user.profile.profile_pic}}" style="width: 10%"><br><br>
 <!--        <a href="{{user.profile.linked_in_url}}" target="_blank"><i class="fa fa-linkedin-square"-->
@@ -50,7 +51,7 @@
             <h3>My Students: </h3>
             <table style="text-align: center;">
                 <strong><tr>
-                    <th>Teacher Name:</th>
+                    <th>Student Name:</th>
                     <th>Phone Number:</th>
                     <th>Email:</th>
                 </tr></strong>
@@ -83,7 +84,11 @@
                     <td>{{l.lesson_date}}</td>
                     <td>{{l.student.user.first_name}} {{l.student.user.last_name}}</td>
                     <td>{{l.subject}}</td>
-                    <td>{{l.record_url}}</td>
+                    {% if l.record_url %}
+                    <td><a href="{{l.record_url}}">Click</a></td>
+                    {% else %}
+                    <td>Not upload yet</td>
+                    {% endif %}
                 </tr>
                 {% endfor%}
             </table>

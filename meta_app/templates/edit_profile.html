@@ -1,0 +1,23 @@
+{% extends "base2.html" %}
+{% load static %}
+{% block title_clock %} Studens {% endblock %}
+
+{% block content_block %}
+
+<body style="background-color:black;">
+
+<div style="background-image: url({% static 'meta_app/free-space-background-07Fixed02.jpg' %});text-align: center;padding-top: 15%;padding-bottom: 30%">
+<form method="POST" action="{% url 'edit_profile' %}" style="color: white">
+
+    {% csrf_token %}
+    {{form.as_p}}
+
+
+    <br><button type="submit" value="submit" class="btn btn-secondary">Submit</button>
+
+    </form>
+</div>
+</body>
+
+
+{% endblock %}

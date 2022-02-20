@@ -50,7 +50,7 @@ types = (
 
 class Profile(MetaModel):
     user = models.OneToOneField(User,on_delete=CASCADE,null=True)
-    profile_pic = models.ImageField(max_length=1500,upload_to='meta_app/static/images',null=True,blank=True,default='https://cdn3.vectorstock.com/i/1000x1000/52/97/image-a-person-icon-people-icon-on-blue-vector-27565297.jpg')
+    profile_pic = models.ImageField(max_length=1500,upload_to='meta_app/static/images',null=True,blank=True,default='https://pngset.com/images/blue-person-icon-pictures-to-pin-pinsdaddy-blue-people-logo-symbol-hand-word-furniture-transparent-png-104501.png')
     age = models.IntegerField(max_length=10,null=False,blank=False)
     bio = models.TextField(max_length=1000,null=True,blank=True)
     linked_in_url = models.CharField(max_length=1000,null=True,blank=True)

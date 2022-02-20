@@ -51,19 +51,35 @@ def personal_page(request):
         return render(request,'admin_page.html',)
     elif group == 'student':
         lessons = StudentTeacherLesson.objects.filter(student=request.user.profile)
+        lessons = lessons.order_by('-lesson_date')
         teachers_set = set([l.teacher for l in lessons])
-        if request.method == 'GET':
-            return render(request,'student_page.html',context={'lessons':lessons,'teachers':teachers_set})
-        elif request.method == 'POST':
-            pass
+        # teachers_set = None
+        # if 'searchTeacher' in request.GET and request.GET['searchTeacher']:
+        #     if request.GET['searchTeacher'] in teachers_set: # todo Need to be fixed
+        #         teachers_set = request.GET['searchTeacher']
+        return render(request,'student_page.html',context={'lessons':lessons,'teachers':teachers_set})
+
     elif group == 'teacher':
         lessons = StudentTeacherLesson.objects.filter(teacher=request.user.profile)
+        lessons = lessons.order_by('-lesson_date')
         students_set = set([l.student for l in lessons])
         return render(request,'teacher_page.html',{'lessons':lessons,'students':students_set})
 
-
-
     return render(request, 'personal_page.html', {'profile': profile})
+
+def edit_profile(request):
+    profile = Profile.user
+    if request.method == 'POST':
+        form = ProfilePageForm(instance=request.user.profile,data=request.POST,initial={'user': request.user})
+        print('post')
+        # form.instance.user = request.user
+        if form.is_valid():
+            form.save()
+            return redirect('/personal_page')
+    elif request.method == 'GET':
+        form = ProfilePageForm(instance=request.user.profile,initial={'user': request.user})
+        print('get')
+    return render(request,'edit_profile.html',{'form':form})
 
 def contact_us(request):
 
@@ -95,6 +111,8 @@ def create_profile(request):
             form.save()
         return redirect('/')
 
+
+
 # class CreateProfilePageView(CreateView):
 #     class Meta:
 #         model = Profile
@@ -122,7 +140,7 @@ def create_profile(request):
 #         form.save()
 #         return students(request)
 #     # form.save()
-#     return render(request, 'edit_student.html',
+#     return render(request, 'edit_profile.html',
 #                   context={'form': form, 'student': student})
 
 # def delete_student_func(request, student_id):

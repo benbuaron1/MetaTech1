@@ -24,6 +24,23 @@
              style="background-image: url({% static 'meta_app/free-space-background-07Fixed02.jpg' %});background-repeat: no-repeat; background-size: cover; padding-top: 13%; padding-bottom: 22%">
             <img src="{% static 'meta_app/newLogoPng.png' %}" class="logo1"
                  style="margin-right: 3%; justify-self: center">
+            {% if user.is_authenticated %}
+                        <div class="containter_div_col" style="width: 40%">
+                <div class="p1" style="width: 100%;  font-size: 400%; color:white;font-weight: 700">
+                    טוב שחזרת, {{user.first_name}}
+                </div>
+                <p class="p2">
+                    הזמן הכי טוב ללמוד הוא עכשיו, מוזמנים להמשיך לקבוע שיעורים ולהמשיך לפרוץ תקרות :)
+
+                </p>
+                {#<!--                {% if group == 'admin' %}-->#}
+                <!--                ben-->
+                {#<!--                {%endif%}-->#}
+                <br>
+                <button class="join_button" onclick="location.href='/personal_page'">הפרופיל שלי</button>
+            </div>
+
+            {% else %}
             <div class="containter_div_col" style="width: 40%">
                 <div class="p1" style="width: 100%;  font-size: 400%; color:white;font-weight: 700">
                     בואו ללמוד לתכנת
@@ -38,6 +55,7 @@
                 <br>
                 <button class="join_button" onclick="location.href='/sign_up'">הצטרפו עכשיו</button>
             </div>
+            {% endif %}
         </div>
         <div class="containter_div_row rowtocol2" style="padding-bottom: 5%; ">
             <div class="p2" id="div_to_change"
