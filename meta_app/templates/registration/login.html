@@ -14,7 +14,7 @@
                     {% csrf_token %}
                     {{ form.as_p }}
                     <button class="join_button" type="submit" style="width: 30%; align-self: center; margin-top: 5%">Login</button>
-                    <a href="#" style="align-self: center; margin-top: 10%">Forgot your password?</a>
+                    <a href="{% url 'password_reset' %}" style="align-self: center; margin-top: 10%">Forgot your password?</a>
                 </form>
 
         </div>

@@ -80,6 +80,8 @@ html, button, p, div {
     margin-bottom: 6%;
     box-shadow: rgba(126, 125, 125, 0.7) 12px 12px 12px;
     width: 500px;
+    border-radius: 15px;
+    border: 1px solid #51A2FC51;
 
 }
 

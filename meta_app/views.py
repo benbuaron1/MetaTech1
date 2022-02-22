@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import SuccessURLAllowedHostsMixin
 from django.contrib.sites import requests
+from django.core.exceptions import ValidationError
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
@@ -71,14 +72,14 @@ def edit_profile(request):
     profile = Profile.user
     if request.method == 'POST':
         form = ProfilePageForm(instance=request.user.profile,data=request.POST,initial={'user': request.user})
-        print('post')
+        # print('post')
         # form.instance.user = request.user
         if form.is_valid():
             form.save()
             return redirect('/personal_page')
     elif request.method == 'GET':
         form = ProfilePageForm(instance=request.user.profile,initial={'user': request.user})
-        print('get')
+        # print('get')
     return render(request,'edit_profile.html',{'form':form})
 
 def contact_us(request):
@@ -102,14 +103,18 @@ def contact_us(request):
 def create_profile(request):
     if request.method == 'GET':
         form = ProfilePageForm(initial={'user': request.user})
-        form.instance.user = request.user
+        # form.instance.user = request.user
         return render(request, 'create_profile.html', {'form': form})
     elif request.method == 'POST':
         form = ProfilePageForm(data=request.POST)
         form.instance.user = request.user
         if form.is_valid():
             form.save()
-        return redirect('/')
+            return redirect('/')
+        else:
+            form = ProfilePageForm(data=request.POST)
+            return render(request, 'create_profile.html', {'form': form})
+
 
 
 

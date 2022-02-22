@@ -33,10 +33,10 @@
             {% if not user.profile.id %}
                 <button class="menu_button_regular" onclick="location.href='/create_profile'">צור פרופיל</button>
             {% else %}
-                <button class="menu_button_regular" onclick="location.href='/personal_page'">הפרופיל שלי</button>
+            <button class="menu_button_regular" onclick="location.href='/personal_page'"><i class='fa fa-user-circle' style='font-size:36px' ></i></button>
             {% endif %}
             <button class="menu_button_regular" onclick="location.href='/contact_us'">צור קשר</button>
-            <button class="menu_button_regular">מי אנחנו</button>
+            <button class="menu_button_regular" onclick="location.href='#who_are_we'">מי אנחנו</button>
             <button class="menu_button_regular">הקורסים שלי</button>
             {% if not user.profile.id %}
                 <button class="menu_button_regular" onclick="location.href='/create_profile'">
@@ -65,7 +65,7 @@
     <nav1 class="topnav">
 
         <button class="menu_button_regular" id="menuBtnId" onclick="location.href='/contact_us'">צור קשר</button>
-        <button class="menu_button_regular" id="menuBtnId">מי אנחנו</button>
+        <button class="menu_button_regular" id="menuBtnId" onclick="location.href='#who_are_we'">מי אנחנו</button>
         <button class="menu_button_regular" id="menuBtnId" onclick="location.href='/#courses'">הקורסים</button>
         <div class="drop_down" style="width: 130%; flex-direction: column">
             <button class="menu_button_regular dropbtn" id="service"><i class="fa fa-caret-down"></i> שירותים</button>

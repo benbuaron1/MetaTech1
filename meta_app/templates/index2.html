@@ -18,8 +18,6 @@
     </div>
     <div class="containter_div_col">
 
-        <!--background-image: linear-gradient(180deg, rgba(0,0,0,1) 12%, rgba(47,47,47,1) 37%, rgba(127,127,128,1) 63%, rgba(222,222,222,1) 81%, rgba(251,251,251,1) 93%);-->
-        <!--        {#        <div class="containter_div_row rowtocol1" style="background-image: linear-gradient(to right, #021B79, #0575E6); padding-top: 10%; padding-bottom: 10%">#}-->
         <div class="containter_div_row rowtocol1"
              style="background-image: url({% static 'meta_app/free-space-background-07Fixed02.jpg' %});background-repeat: no-repeat; background-size: cover; padding-top: 13%; padding-bottom: 22%">
             <img src="{% static 'meta_app/newLogoPng.png' %}" class="logo1"
@@ -30,14 +28,16 @@
                     טוב שחזרת, {{user.first_name}}
                 </div>
                 <p class="p2">
-                    הזמן הכי טוב ללמוד הוא עכשיו, מוזמנים להמשיך לקבוע שיעורים ולהמשיך לפרוץ תקרות :)
+                    הזמן הכי טוב ללמוד הוא עכשיו, מוזמנים להמשיך לקבוע שיעורים ולהמשיך לפרוץ תקרות
 
                 </p>
-                {#<!--                {% if group == 'admin' %}-->#}
-                <!--                ben-->
-                {#<!--                {%endif%}-->#}
+
                 <br>
+                            {% if user.profile.id %}
                 <button class="join_button" onclick="location.href='/personal_page'">הפרופיל שלי</button>
+                            {% else %}
+                            <button class="join_button" onclick="location.href='/create_profile'">צור פרופיל</button>
+                            {% endif%}
             </div>
 
             {% else %}
@@ -49,9 +49,7 @@
                     אם כל אחת יכולה, למה שגם את לא תצטרפי? השאירי פרטים ונחזור אלייך עם תוכנית מותאמת במיוחד בשבילך!
                 <p style="font-size: 12px;color: white;text-align: center">הפנייה לשני המינים*
                 </p>
-                {#<!--                {% if group == 'admin' %}-->#}
-                <!--                ben-->
-                {#<!--                {%endif%}-->#}
+
                 <br>
                 <button class="join_button" onclick="location.href='/sign_up'">הצטרפו עכשיו</button>
             </div>
@@ -68,7 +66,7 @@
             </div>
             <div class="containter_div_col p1" id="courses">
                 <p>הקורסים שלנו</p>
-                <div class="containter_div_col wrapper col_to_row" style=" margin-top: 15%;">
+                <div class="containter_div_col wrapper col_to_row" style=" margin-top: 5%;">
                     <button class="option_button_1 "  id="pythonbtn" onclick="Pychanger()">פייתון
                         למתחילים
                     </button>
@@ -98,37 +96,27 @@
 
         </div>
         <div class="containter_div_row"
-             style="background-image: url({% static 'meta_app/free-space-background-07Fixed02.jpg' %});background-repeat: no-repeat; background-size: cover; padding-top: 10%; padding-bottom: 10%; transform: scaleY(-1)">
-            <div class="containter_div_col">
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
+             style="background-image: url({% static 'meta_app/free-space-background-07Fixed02.jpg' %});background-repeat: no-repeat; background-size: cover; padding-top: 10%;">
+            <div class="containter_div_col" style="width: 100%;display: flex;justify-content: space-evenly" id="who_are_we">
+                <h4 style="color: white;font-size: 36px;margin-top: 0; text-align: center">?מי אנחנו</h4>
+
+                <div style="display: flex;flex-direction: row;">
+                    <div style="width: 50%; text-align: center">
+                        <img src="{% static 'meta_app/people.jpg' %}" style="width: 70%">
+                    </div>
+                    <div style="width: 50%; text-align: center">
+                        <p style="color: white">אנשים של אנשים</p>
+                    </div>
+                </div>
+                <div style="display: flex;flex-direction: row;">
+                    <div style="width: 50%; text-align: center;">
+                        <p style="color: white">מאמינים בקדמה</p>
+                    </div>
+                    <div style="width: 50%; text-align: center;">
+                        <img src="{% static 'meta_app/working.jpg' %}" style="width: 70%">
+                    </div>
+
+                </div>
             </div>
             <div class="containter_div_col">
                 <br>

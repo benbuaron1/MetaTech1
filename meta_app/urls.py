@@ -9,6 +9,7 @@ urlpatterns = [
     path('create_profile',views.create_profile,name='create_profile'),
     # path('students',views.students,name='students'),
     # path('delete_student/<int:student_id>',views.delete_student_func,name='delete_student'),
-    path('edit_profile',views.edit_profile,name='edit_profile')
+    path('edit_profile',views.edit_profile,name='edit_profile'),
+
 ]
 
