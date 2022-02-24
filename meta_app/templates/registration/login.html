@@ -7,14 +7,13 @@
         <div style="display: flex; background-image: url({% static 'meta_app/free-space-background-07Fixed02.jpg' %});
                 background-repeat: no-repeat; background-size: 105%; padding-bottom: 50%; overflow-y: hidden"; >
 
-            <div style="display: flex; flex-direction: column; justify-items: center; align-items: center; margin: auto; margin-top: 8%
-            ; background-color:rgba(255,255,255,0.27); width: 15%; padding-bottom: 1%">
-                <h2 style="color: white">התחבר</h2>
+            <div class="login_div">
+                <h2 class="p1" style="font-size: 35px" >התחבר</h2>
                 <form method="post" style="display: flex; flex-direction: column">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <button class="join_button" type="submit" style="width: 30%; align-self: center; margin-top: 5%">Login</button>
-                    <a href="{% url 'password_reset' %}" style="align-self: center; margin-top: 10%">Forgot your password?</a>
+                    <button class="join_button" type="submit" style="width: 45%; align-self: center; margin-top: 5%">כניסה</button>
+                    <a href="{% url 'password_reset' %}" style="align-self: center; margin-top: 8%;margin-bottom: 8%; font-size: 20px; color: white">Forgot your password?</a>
                 </form>
 
         </div>
