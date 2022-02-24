@@ -65,20 +65,17 @@ html, button, p, div {
 
 .option_button_1 {
     display: block;
-    font-size: 40px;
+    font-size: 30px;
     border-color: rgba(255, 255, 255, 0);
     transition-duration: 0.3s;
     background-color: rgba(160, 126, 255, 0);
     color: #030513;
     cursor: pointer;
-    padding-left: 2%;
-    padding-right: 2%;
-    padding-top: 0.3%;
-    padding-bottom: 0.3%;
-    margin-top: 6%;
-    margin-bottom: 6%;
+    /*padding: 50px;*/
+    margin: 2%;
     box-shadow: rgba(126, 125, 125, 0.7) 12px 12px 12px;
-    width: 500px;
+    width: 280px;
+    height: 110px;
     border-radius: 15px;
     border: 1px solid #51A2FC51;
 
@@ -88,11 +85,17 @@ html, button, p, div {
     /*background-image: linear-gradient(0deg, rgba(0,0,0,1) 12%, rgba(47,47,47,1) 37%, rgba(127,127,128,1) 63%, rgba(222,222,222,1) 81%, rgba(251,251,251,1) 93%);*/
     color: white;
     /*background-image: url("free-space-background-07Fixed02.jpg");*/
-    background-color: #51A2FC51;
+    background-color: rgba(54, 135, 250, 0.83);
     -moz-background-size: contain;
 }
 
-
+.option_button_1:focus {
+    /*background-image: linear-gradient(0deg, rgba(0,0,0,1) 12%, rgba(47,47,47,1) 37%, rgba(127,127,128,1) 63%, rgba(222,222,222,1) 81%, rgba(251,251,251,1) 93%);*/
+    color: white;
+    /*background-image: url("free-space-background-07Fixed02.jpg");*/
+    background-color: rgba(54, 135, 250, 0.83);
+    -moz-background-size: contain;
+}
 
 
 @media screen and (max-width: 900px) {
@@ -106,7 +109,7 @@ html, button, p, div {
 
     }
 
-    .option_button_1{
+    .option_button_1 {
         font-size: 25px;
         width: 250px;
         height: 75px;
@@ -114,11 +117,11 @@ html, button, p, div {
         margin: 1%;
     }
 
-    .wrapper{
+    .wrapper {
         flex-wrap: wrap;
     }
 
-    .col_to_row{
+    .col_to_row {
         flex-direction: row;
         margin: 2%;
     }
@@ -204,15 +207,15 @@ html, button, p, div {
 .join_button {
     color: #ffffff;
     background-color: rgba(54, 135, 250, 0.83);
-    width: 190px;
+    width: 35%;
     margin: auto;
     height: 50px;
-    border-radius: 20px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
-    font-size: 28px;
+    font-size: 24px;
     text-shadow: rgba(236, 236, 236, 0.44) 2px 2px 2px;
-    box-shadow: rgba(255, 255, 255, 0.39) 3px 3px 3px;
+    /*box-shadow: rgba(255, 255, 255, 0.3) 3px 3px 3px;*/
     font-family: 'Rubik', sans-serif;
     transition-duration: 0.4s;
 
@@ -220,7 +223,7 @@ html, button, p, div {
 }
 
 .join_button:hover {
-    background-color: rgba(131, 44, 229, 0.72);
+    background-color: rgba(0, 76, 201, 0.83);
     /*background-image: linear-gradient(90deg, #dbd0e0, #6f18cb);*/
 }
 
@@ -310,8 +313,6 @@ html, button, p, div {
 .servie:hover {
 
 }
-
-
 
 
 .container {
@@ -643,7 +644,7 @@ html, button, p, div {
     background-color: #f44336;
 }
 
-.login_div{
+.login_div {
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -656,7 +657,7 @@ html, button, p, div {
     box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 10px;
 }
 
-.signup_div{
+.signup_div {
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -664,21 +665,39 @@ html, button, p, div {
     margin: auto;
     margin-top: 5%;
     background-color: rgba(169, 169, 169, 0.46);
+    width: 30%;
+    border-radius: 40px;
+    box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 10px;
+}
+
+
+.createprofile_div {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 1%;
+    background-color: rgba(169, 169, 169, 0.46);
     width: 40%;
     border-radius: 40px;
     box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 10px;
 }
 
-input[type=text], input[type=password], input[type=email] {
+input[type=text], input[type=password], input[type=email], input[type=number], input[type=url], textarea {
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 8px;
     display: flex;
-    border: 1px solid rgba(86, 85, 85, 0);
     box-sizing: border-box;
     background-color: white;
     color: black;
     font-size: 20px;
+    border: solid rgba(56, 93, 241, 0) 5px;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=number]:focus, input[type=url]:focus, textarea:focus {
+    border: solid #385df1 5px;
 }
 
 .imgcontainer {
@@ -720,47 +739,57 @@ img.avatar {
 }
 
 .sidenav {
-  height: 100%;
-  width: 14.5%;
-  position: fixed;
-  z-index: 20;
-  top: 0;
-  right: 0;
-  /*background-color: #111;*/
-  /*overflow-x: hidden;*/
-  transition: 0.5s;
+    height: 100%;
+    width: 14.5%;
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    right: 0;
+    /*background-color: #111;*/
+    /*overflow-x: hidden;*/
+    transition: 0.5s;
     background-color: rgba(0, 0, 0, 0.6);
 }
 
 .sidenav a {
-  padding: 8px 8px 8px 32px;
+    padding: 8px 8px 8px 32px;
     padding-right: 30px;
     padding-left: 0;
-  text-decoration: none;
-  font-size: 25px;
-  color: #ffffff;
-  display: block;
-  transition: 0.3s;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
     text-align: right;
 
 }
 
 .sidenav a:hover {
-  color: #9d15da;
+    color: #9d15da;
 }
 
 
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
 }
 
 @media screen and (max-width: 800px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
 }
 
-.transbox_student{
+.transbox_student {
     background-color: rgba(255, 255, 255, 0.4);
     width: 70%;
     alignment: center;
@@ -774,18 +803,31 @@ img.avatar {
 }
 
 table {
-  font-family: 'Rubik', sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+    font-family: 'Rubik', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
 }
 
 td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
     background-color: rgba(110, 86, 238, 0.38);
 }
 
 tr:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.33);
+    background-color: rgba(0, 0, 0, 0.33);
+}
+
+.form_label {
+    font-size: 23px;
+    color: white;
+}
+
+.about_text{
+    background-color: rgba(197, 197, 197, 0.6);
+    height: 80%;
+    color: #ffffff;
+    padding: 33%;
+    margin: 2%;
 }

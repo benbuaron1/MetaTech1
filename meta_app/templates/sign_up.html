@@ -10,10 +10,42 @@
         <hr>
         {#<div style="margin-right:30%;margin-left:30%;padding: 10px;text-align: center;background-color: rgba(255,255,255,0.2)">#}
         <div class="signup_div">
-            <form action="{% url 'sign_up' %}" method="post" style="margin-top:3%; display: flex; flex-direction: column">
+
+            <form action="/sign_up" method="post" style="margin-top:3%; display: flex; flex-direction: column; text-align: right">
                 {% csrf_token %}
-                {{ form.as_p }}
+                <p>
+                    <label for="id_first_name" class="form_label">:שם פרטי</label>
+                    <input type="text" name="first_name" required="" id="id_first_name">
+                </p>
+                <p>
+                    <label for="id_last_name" class="form_label">:שם משפחה</label>
+                    <input type="text" name="last_name" required="" id="id_last_name">
+                </p>
+                <p>
+                    <label for="id_username" class="form_label">:אימייל</label>
+                    <input type="email" name="username" autofocus="" required="" id="id_username">
+                </p>
+                <p>
+                    <label for="id_password1" class="form_label">:סיסמה</label>
+                    <input type="password" name="password1" autocomplete="new-password" required="" id="id_password1">
+                    <span class="helptext"></span></p>
+                <ul>
+                    <li>הסיסמה חייבת להכיל מינימום 8 תווים.</li>
+                    <li>הסיסמה חייבת להכיל מספרים ואותיות.</li>
+                </ul>
+
+
+                <p>
+                    <label for="id_password2" class="form_label">:אימות סיסמה</label>
+                    <input type="password" name="password2" autocomplete="new-password" required="" id="id_password2">
+
+                </p>
                 <input class="join_button" type="submit" value="Submit" style="margin-bottom: 5%">
+            </form>
+            {#            <form action="{% url 'sign_up' %}" method="post" style="margin-top:3%; display: flex; flex-direction: column">#}
+            {#                {% csrf_token %}#}
+            {#                {{ form.as_p }}#}
+            {#                <input class="join_button" type="submit" value="Submit" style="margin-bottom: 5%">#}
             </form>
         </div>
     </div>
