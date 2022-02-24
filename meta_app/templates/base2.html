@@ -33,7 +33,8 @@
             {% if not user.profile.id %}
                 <button class="menu_button_regular" onclick="location.href='/create_profile'">צור פרופיל</button>
             {% else %}
-            <button class="menu_button_regular" onclick="location.href='/personal_page'"><i class='fa fa-user-circle' style='font-size:36px' ></i></button>
+                <button class="menu_button_regular" onclick="location.href='/personal_page'"><i
+                        class='fa fa-user-circle' style='font-size:36px'></i></button>
             {% endif %}
             <button class="menu_button_regular" onclick="location.href='/contact_us'">צור קשר</button>
             <button class="menu_button_regular" onclick="location.href='#who_are_we'">מי אנחנו</button>
@@ -46,7 +47,8 @@
                     שלום, {{ user.first_name }}</button>
             {% endif %}
             <button class="menu_button_regular" onclick="location.href='/'"><img
-                    src="{% static 'meta_app/MetaIconColor.png' %}" id = "menu_icon" style="width: 43px; transform: translateY(-3px); z-index: 150">
+                    src="{% static 'meta_app/MetaIconColor.png' %}" id="menu_icon"
+                    style="width: 43px; transform: translateY(-3px); z-index: 150">
             </button>
         </nav1>
 
@@ -76,46 +78,48 @@
             </div>
         </div>
         <button class="menu_button_regular" onclick="location.href='/sign_up'">הרשמה</button>
-                <button class="menu_button_regular" onclick="location.href='/login'">התחבר</button>
-<!--        <button class="menu_button_regular" onclick="document.getElementById('id01').style.display='block'">התחבר-->
+        <button class="menu_button_regular" onclick="location.href='/login'">התחבר</button>
+        <!--        <button class="menu_button_regular" onclick="document.getElementById('id01').style.display='block'">התחבר-->
         </button>
         <button class="menu_button_regular logomenu" onclick="location.href='/'"><img
-                src="{% static 'meta_app/MetaIconColor.png' %}" id = "menu_icon" style="width: 43px; transform: translateY(5px)">
+                src="{% static 'meta_app/MetaIconColor.png' %}" id="menu_icon"
+                style="width: 43px; transform: translateY(5px)">
         </button>
     </nav1>
     <div id="id01" class="modal">
     <span onclick="document.getElementById('id01').style.display='none'"
           class="close" title="Close Modal">&times;</span>
-<!--        <form class="modal-content animate" action="/action_page.php">-->
-<!--            <div class="imgcontainer">-->
-<!--                <img src="{% static 'meta_app/img_avatar2.png' %}" alt="Avatar" class="avatar">-->
-<!--            </div>-->
+        <!--        <form class="modal-content animate" action="/action_page.php">-->
+        <!--            <div class="imgcontainer">-->
+        <!--                <img src="{% static 'meta_app/img_avatar2.png' %}" alt="Avatar" class="avatar">-->
+        <!--            </div>-->
 
-<!--            <div class="container">-->
-<!--                <label for="uname"><b>Username</b></label>-->
-<!--                <input type="text" placeholder="Enter Username" name="uname" required>-->
+        <!--            <div class="container">-->
+        <!--                <label for="uname"><b>Username</b></label>-->
+        <!--                <input type="text" placeholder="Enter Username" name="uname" required>-->
 
-<!--                <label for="psw"><b>Password</b></label>-->
-<!--                <input type="password" placeholder="Enter Password" name="psw" required>-->
+        <!--                <label for="psw"><b>Password</b></label>-->
+        <!--                <input type="password" placeholder="Enter Password" name="psw" required>-->
 
-<!--                <button class="button_login" type="submit">Login</button>-->
-<!--                <label>-->
-<!--                    <input type="checkbox" checked="checked" name="remember"> Remember me-->
-<!--                </label>-->
-<!--            </div>-->
+        <!--                <button class="button_login" type="submit">Login</button>-->
+        <!--                <label>-->
+        <!--                    <input type="checkbox" checked="checked" name="remember"> Remember me-->
+        <!--                </label>-->
+        <!--            </div>-->
 
-<!--            <div class="container" style="background-color:#f1f1f1; ">-->
-<!--                <button class="button_login cancelbtn" type="button" onclick="document.getElementById('id01').style.display='none'">-->
-<!--                    Cancel-->
-<!--                </button>-->
-<!--                <span class="psw">Forgot <a href="#">password?</a></span>-->
-<!--            </div>-->
-<!--        </form>-->
+        <!--            <div class="container" style="background-color:#f1f1f1; ">-->
+        <!--                <button class="button_login cancelbtn" type="button" onclick="document.getElementById('id01').style.display='none'">-->
+        <!--                    Cancel-->
+        <!--                </button>-->
+        <!--                <span class="psw">Forgot <a href="#">password?</a></span>-->
+        <!--            </div>-->
+        <!--        </form>-->
         <form method="post" style="display: flex; flex-direction: column">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <button class="join_button" type="submit" style="width: 30%; align-self: center; margin-top: 5%">Login</button>
-                    <a href="#" style="align-self: center; margin-top: 10%">Forgot your password?</a>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="join_button" type="submit" style="width: 30%; align-self: center; margin-top: 5%">Login
+            </button>
+            <a href="#" style="align-self: center; margin-top: 10%">Forgot your password?</a>
         </form>
     </div>
 {% endif %}
@@ -131,5 +135,25 @@
 
 {% endblock %}
 
+<footer style="text-align: center;background-color: black">
+    <div style="display: flex; flex-direction: column">
+        <div style="display: flex;flex-direction: row">
+            <div style="display: flex;flex-direction: column; width: 50%">
+                <img src="{% static 'meta_app/PNG-Transparent.png' %}" style="width: 50%; display: flex; margin: auto">
+            </div>
+            <div style="display: flex;font-size: 24px;flex-direction: column; width: 50%">
+                <a href="#">צור קשר</a>
+                <a href="#">שירותים</a>
+                <a href="#">מי אנחנו</a>
+                <a href="#">בואו לעבוד איתנו</a>
+            </div>
+
+        </div>
+        <br>
+        Built & Designed by Omer Munk and Ben Buaron.
+        <br>
+        © 2022 by MetaTech. All rights reserved.
+    </div>
+</footer>
 </body>
 </html>

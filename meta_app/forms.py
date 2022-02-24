@@ -65,21 +65,21 @@ class ContactUs(forms.ModelForm):
         model = Lead
         fields = ['first_name','last_name','phone_number','email','message']
 
+class MyDateWidget(DateInput):
+    input_type = "date"
 
 class ProfilePageForm(forms.ModelForm):
     user = forms.ModelChoiceField(queryset=User.objects.all(),widget=HiddenInput)
     profile_pic = forms.FileField(required=False,widget=HiddenInput)
-    age = forms.IntegerField(min_value=0,required=True)
-    bio = forms.Textarea()
-    linked_in_url = forms.URLField(required=False)
-    terms_agreed = forms.BooleanField(required=True)
-    phone_numer = forms.CharField(required=True,validators=[validate_phone])
+    age = forms.DateField(required=True, label="תאריך לידה", widget=MyDateWidget())
+    bio = forms.CharField(label="קצת עליי")
+    terms_agreed = forms.BooleanField(required=True, label="הסכמה לתנאי השימוש")
+    phone_numer = forms.CharField(required=True,validators=[validate_phone], label="מספר טלפון")
     class Meta:
         model = Profile
-        fields = ('phone_numer','city','age','linked_in_url','bio','terms_agreed')
+        fields = ('phone_numer','city','age','bio','terms_agreed')
 
-class MyDateWidget(DateInput):
-    input_type = "date"
+
 
 
 
