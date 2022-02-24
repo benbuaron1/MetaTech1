@@ -51,7 +51,6 @@ types = (
 class Profile(MetaModel):
     user = models.OneToOneField(User,on_delete=CASCADE,null=True)
     profile_pic = models.ImageField(max_length=1500,upload_to='meta_app/static/images',null=True,blank=True,default='https://pngset.com/images/blue-person-icon-pictures-to-pin-pinsdaddy-blue-people-logo-symbol-hand-word-furniture-transparent-png-104501.png')
-    age = models.DateField(null=True,blank=True)
     bio = models.TextField(max_length=1000,null=True,blank=True)
     linked_in_url = models.CharField(max_length=1000,null=True,blank=True)
     terms_agreed = models.BooleanField(null=False,blank=False)
@@ -59,6 +58,7 @@ class Profile(MetaModel):
     city = models.CharField(max_length=128,null=True,blank=True)
     credits = models.IntegerField(max_length=1000,null=True,blank=True,default=0)
     type = models.CharField(max_length=128,null=False,blank=False,choices=types)
+    birth_date = models.DateField(null=True,blank=True)
 
     def __str__(self):
         return str(self.user)
@@ -81,6 +81,7 @@ class StudentTeacherLesson(MetaModel):
     subject = models.TextField(max_length=1028, null=False, blank=False)
     record_url = models.URLField(blank=True, null=True)
     lesson_date = models.DateField(null=False,blank=False)
+    lesson_material = models.URLField(null=True,blank=True)
 
     def __str__(self):
         return f"{self.student} by {self.teacher} at {self.lesson_date}"

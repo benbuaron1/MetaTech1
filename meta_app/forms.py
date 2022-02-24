@@ -58,8 +58,11 @@ class UserCreationForm(UserCreationForm):
 
 
 class ContactUs(forms.ModelForm):
-    # first_name = forms.CharField(label='שם פרטי')
-    # email = forms.EmailField(label='אימייל')
+    first_name = forms.CharField(label=':שם פרטי')
+    last_name = forms.CharField(label='שם משפחה')
+    email = forms.EmailField(label='אימייל')
+    phone_number = forms.CharField(label='מספר פלאפון')
+    message = forms.CharField(label='הודעה אישית')
 
     class Meta:
         model = Lead
@@ -71,15 +74,23 @@ class MyDateWidget(DateInput):
 class ProfilePageForm(forms.ModelForm):
     user = forms.ModelChoiceField(queryset=User.objects.all(),widget=HiddenInput)
     profile_pic = forms.FileField(required=False,widget=HiddenInput)
-    age = forms.DateField(required=True, label="תאריך לידה", widget=MyDateWidget())
+    birth_date = forms.DateField(required=True, label="תאריך לידה", widget=MyDateWidget())
     bio = forms.CharField(label="קצת עליי")
     terms_agreed = forms.BooleanField(required=True, label="הסכמה לתנאי השימוש")
     phone_numer = forms.CharField(required=True,validators=[validate_phone], label="מספר טלפון")
     class Meta:
         model = Profile
-        fields = ('phone_numer','city','age','bio','terms_agreed')
+        fields = ('phone_numer','city','birth_date','bio','terms_agreed')
 
 
+class AuthenticationForm(forms.Form):
 
+    error_messages = {
+        'invalid_login': _(
+            "לא קיים משתמש במערכת עם שם משתמש וסיסמה זו, אנא נסו שנית"
+            "במידת הצורך אפסו את סיסמתכם"
+        ),
+        'inactive': _("This account is inactive."),
+    }
 
 

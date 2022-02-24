@@ -6,7 +6,8 @@
 
 <body style="background-color:black;">
 
-<div style="background-image: url({% static 'meta_app/free-space-background-07Fixed02.jpg' %});text-align: center;padding-top: 15%;padding-bottom: 30%">
+<div style="background-image: url({% static 'meta_app/free-space-background-07Fixed02.jpg' %});text-align: center;padding-top: 5%;padding-bottom: 30%">
+    <h1 style="text-align:center;color: white">עריכת הפרופיל של {{user.first_name}}</h1>
 <form method="POST" action="{% url 'edit_profile' %}" style="color: white">
 
     {% csrf_token %}

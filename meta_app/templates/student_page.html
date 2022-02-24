@@ -33,7 +33,7 @@
             <ul style="list-style: none; text-align: right; padding-right:40px ">
                 <li>:קרדיטים שצברתי<br>{{user.profile.credits}} 💸 </li>
                 <br>
-                <li>{{user.profile.age}} :גיל</li>
+                <li>{{user.profile.birth_date}} :תאריך לידה</li>
                 <br>
                 <li>{{user.profile.phone_numer}} :מספר טלפון</li>
                 <br>
@@ -49,19 +49,19 @@
 
 <!--        </div>-->
 <!--        <div id="myTeachers" style="visibility: hidden">       -->
-            <div id="myTeachers" style="visibility: visible">
-            <h3>My Teachers: </h3>
+            <div id="myTeachers" style="visibility: visible; text-align: right">
+            <h3>:המורים שלי</h3>
 <!--                <label for="searchTeacher">Search Teacher:</label>-->
 <!--                <input id="searchTeacher" type="text">-->
 <!--                <button onclick="location.href='personal_page?searchTeacher='+document.getElementById('searchTeacher').value">Search</button><br><br>-->
-            <table style="text-align: center;">
-                <strong><tr>
-                    <th>Teacher Name:</th>
-                    <th>Phone Number:</th>
-                    <th>Email:</th>
+            <table >
+                <strong><tr style="text-align: right">
+                    <th>:שם המורה</th>
+                    <th>:שם התלמיד</th>
+                    <th>:אימייל</th>
                 </tr></strong>
                 {% for l in teachers %}
-                <tr>
+                <tr style="text-align: right">
                     <td>{{l.user.first_name}} {{l.user.first_name}}</td>
                     <td>{{l.phone_numer}}</td>
                     <td>{{l.user.email}}</td>
@@ -75,24 +75,30 @@
 <!--            </ul>-->
         </div>
 <!--        <div id="myLessons" style="visibility: hidden">-->
-        <div id="myLessons" style="visibility: visible">
-            <h3>My lessons: </h3>
+        <div id="myLessons" style="visibility: visible; text-align: right">
+            <h3 style="text-align: right">:השיעורים שלי</h3>
             <table style="text-align: center">
-                <strong><tr>
-                    <th>Lesson Date:</th>
-                    <th>Teacher:</th>
-                    <th>Subject:</th>
-                    <th>Record Url:</th>
+                <strong><tr style="text-align: right">
+                    <th>:תאריך השיעור</th>
+                    <th>:מורה</th>
+                    <th>:נושאים</th>
+                    <th>:קישור הקלטה</th>
+                    <th>:קישור חומר לימוד</th>
                 </tr></strong>
                 {% for l in lessons %}
-                <tr>
+                <tr style="text-align: right">
                     <td>{{l.lesson_date}}</td>
                     <td>{{l.teacher.user.first_name}} {{l.teacher.user.last_name}}</td>
                     <td>{{l.subject}}</td>
                     {% if l.record_url %}
-                    <td><a href="{{l.record_url}}" target="_blank">Click</a></td>
+                    <td><a href="{{l.record_url}}" target="_blank">Video</a></td>
                     {% else %}
-                    <td>Not upload yet</td>
+                    <td>טרם הועלה</td>
+                    {% endif %}
+                    {% if l.lesson_material %}
+                    <td><a href="{{l.lesson_material}}" target="_blank">Material</a></td>
+                    {% else %}
+                    <td>טרם הועלה</td>
                     {% endif %}
                 </tr>
                 {% endfor%}

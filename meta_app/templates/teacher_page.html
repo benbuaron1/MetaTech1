@@ -51,15 +51,15 @@
             <h3>My Students: </h3>
             <table style="text-align: center;">
                 <strong><tr>
-                    <th>Student Name:</th>
-                    <th>Phone Number:</th>
-                    <th>Email:</th>
+                    <th>:שם התלמיד</th>
+                    <th>:מספר פלאפון</th>
+                    <th>:אימייל</th>
                 </tr></strong>
                 {% for l in students %}
                 <tr>
                     <td>{{l.user.first_name}} {{l.user.first_name}}</td>
                     <td>{{l.phone_numer}}</td>
-                    <td>{{user}}</td>
+                    <td>{{l.user.email}}</td>
                 </tr>
                 {% endfor%}
             </table>
@@ -71,13 +71,14 @@
         </div>
 <!--        <div id="myLessons" style="visibility: hidden">-->
         <div id="myLessons" style="visibility: visible">
-            <h3>My lessons: </h3>
+            <h3>:השיעורים שלי</h3>
             <table style="text-align: center">
                 <strong><tr>
-                    <th>Lesson Date:</th>
-                    <th>Teacher:</th>
-                    <th>Subject:</th>
-                    <th>Record Url:</th>
+                    <th>:תאריך השיעור</th>
+                    <th>:שם התלמיד</th>
+                    <th>:נושא השיעור</th>
+                    <th>:קישור הקלטה</th>
+                    <th>:קישור חומר לימוד</th>
                 </tr></strong>
                 {% for l in lessons %}
                 <tr>
@@ -87,7 +88,12 @@
                     {% if l.record_url %}
                     <td><a href="{{l.record_url}}">Click</a></td>
                     {% else %}
-                    <td>Not upload yet</td>
+                    <td>טרם הועלה</td>
+                    {% endif %}
+                    {% if l.lesson_material %}
+                    <td><a href="{{l.lesson_material}}" target="_blank">Material</a></td>
+                    {% else %}
+                    <td>טרם הועלה</td>
                     {% endif %}
                 </tr>
                 {% endfor%}

@@ -5,28 +5,40 @@
         You are already logged in, go back
     {% else %}
         <div style="display: flex; background-image: url({% static 'meta_app/free-space-background-07Fixed02.jpg' %});
-                background-repeat: no-repeat; background-size: 105%; padding-bottom: 50%; overflow-y: hidden" ;>
+                background-repeat: no-repeat; background-size: 115%; padding-bottom: 10%; overflow-y: hidden" ;>
             <div class="login_div">
-                <h2 class="p1" style="font-size: 35px">התחבר</h2>
+                <h2 class="p1" style="font-size: 35px;color: white">התחבר</h2>
                 <form method="post" style="display: flex; flex-direction: column; text-align: right">
                     {% csrf_token %}
-                    <p>
-                        <label for="id_username" class="form_label">:אימייל</label>
-                        <input type="text" name="username" autofocus="" autocapitalize="none"
-                               autocomplete="username" maxlength="150" required="" id="id_username">
-                    </p>
-                    <p>
-                        <label for="id_password" class="form_label">:סיסמה</label>
-                        <input type="password" name="password" autocomplete="current-password" required=""
-                               id="id_password" >
-                    </p>
+                    <div style="color: white;text-align: center;list-style: none;text-decoration: none" >{{ form.errors }}</div>
+                    <div>
+                    <label class="form_label" for="{{ form.username.id_for_label }}">:שם משתמש</label>
+                    {{ form.username }}
+                    </div>
+                    <div>
+<!--                    {{ form.password.errors }}-->
+                    <label class="form_label" for="{{ form.password.id_for_label }}">:סיסמה</label>
+                    {{ form.password }}
+                    </div>
+<!--                    {{ form.errors }}-->
+<!--                    <p>-->
+<!--                        <label for="id_username" class="form_label">:אימייל</label>-->
+<!--                        <input type="text" name="username" autofocus="" autocapitalize="none"-->
+<!--                               autocomplete="username" maxlength="150" required="" id="id_username">-->
+<!--                    </p>-->
+<!--                    <p>-->
+
+<!--                        <label for="id_password" class="form_label">:סיסמה</label>-->
+<!--                        <input type="password" name="password" autocomplete="current-password" required=""-->
+<!--                               id="id_password" >-->
+<!--                    </p>-->
                     <button class="join_button" type="submit"
                             style="width: 45%; align-self: center; margin-top: 5%">כניסה
                     </button>
                     <a href="{% url 'password_reset' %}"
                        style="align-self: center; margin-top: 8%;margin-bottom: 8%; " class="form_label">?שכחת סיסמה</a>
                 </form>
-                {#                    {{ form.as_p }}#}
+
             </div>
         </div>
     {% endif %}

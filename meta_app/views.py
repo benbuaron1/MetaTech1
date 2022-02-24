@@ -4,7 +4,7 @@ from django.contrib.auth.views import SuccessURLAllowedHostsMixin
 from django.contrib.sites import requests
 from django.core.exceptions import ValidationError
 from django.core.mail import send_mail, BadHeaderError
-from django.http import HttpResponse
+from django.http import HttpResponse, FileResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from .decorators import *
 from django.views.generic import CreateView, FormView
@@ -100,46 +100,5 @@ def create_profile(request):
         else:
             form = ProfilePageForm(data=request.POST)
             return render(request, 'create_profile.html', {'form': form})
-
-
-
-
-# class CreateProfilePageView(CreateView):
-#     class Meta:
-#         model = Profile
-#         form_class = ProfilePageForm
-#         template_name = 'registration/create_profile.html'
-#    def form_valid(self, form):
-#         form.instance.user = self.request.user
-#         return super().form_valid(form)
-#
-#
-
-#
-#     def get_queryset(self):
-#         return self
-
-
-# def students(request):
-#     studs = Student.objects.all()
-#     return render(request, 'students.html', context={'students': studs})
-
-# def edit_student_func(request, student_id):
-#     student = Student.objects.get(pk=student_id)
-#     form = Sign_up_form(instance=student, data=request.POST)
-#     if form.is_valid():
-#         form.save()
-#         return students(request)
-#     # form.save()
-#     return render(request, 'edit_profile.html',
-#                   context={'form': form, 'student': student})
-
-# def delete_student_func(request, student_id):
-#     student = Student.objects.get(pk=student_id)
-#
-#     if request.method == 'POST':
-#         student.delete()
-#         return students(request)
-#     return render(request, template_name='delete_student.html', context={'students': student})
 
 
