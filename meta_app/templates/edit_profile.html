@@ -1,6 +1,6 @@
 {% extends "base2.html" %}
 {% load static %}
-{% block title_clock %} Studens {% endblock %}
+{% block title_clock %} Edit Profile {% endblock %}
 
 {% block content_block %}
 
@@ -8,15 +8,17 @@
 
 <div style="background-image: url({% static 'meta_app/free-space-background-07Fixed02.jpg' %});text-align: center;padding-top: 5%;padding-bottom: 30%">
     <h1 style="text-align:center;color: white">עריכת הפרופיל של {{user.first_name}}</h1>
-<form method="POST" action="{% url 'edit_profile' %}" style="color: white">
+    <div class = "createprofile_div" style="margin-right:30%;margin-left:30%;background-color: rgba(255,255,255,0.37);text-align: center;padding:10px">
+<form method="POST" action="{% url 'edit_profile' %}" style="color: white;">
 
     {% csrf_token %}
     {{form.as_p}}
 
 
-    <br><button type="submit" value="submit" class="btn btn-secondary">Submit</button>
+    <br><button type="submit" value="submit" class="join_button">Submit</button>
 
     </form>
+    </div>
 </div>
 </body>
 

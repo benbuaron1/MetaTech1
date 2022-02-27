@@ -42,6 +42,7 @@ def index2(request):
 def personal_page(request):
     group = None
     profile = Profile.user
+
     if request.user.groups.exists():
         group = request.user.groups.all()[0].name
     if group == 'admin':

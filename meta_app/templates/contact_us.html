@@ -9,54 +9,54 @@
 <div style="background-image: url({% static 'meta_app/free-space-background-07Fixed02.jpg' %}); padding-top: 5%; padding-bottom: 28%;">
 <h1 style="text-align:center;color: white">צרו איתנו קשר</h1>
 <hr>
-<div style="margin-right:30%;margin-left:30%">
-<form action="{% url 'contact_us' %}" method="post" style=" background-color: rgba(255,255,255,0.27);text-align: center;padding: 10px">
+<div class="createprofile_div" style="margin-right:30%;margin-left:30%">
+<form action="{% url 'contact_us' %}" method="post" style="text-align: center;padding: 10px; color: white; font-size: 24px">
 
     {% csrf_token %}
-<!--    {{ form.as_p }}-->
+    {{ form.as_p }}
 <!--    <form action="/contact_us" method="post" style=" background-color: rgba(255,255,255,0.27);text-align: center;padding: 10px">-->
 <!---->
 <!--    <input type="hidden" name="csrfmiddlewaretoken" value="HftMadZHQZru12hgfaIBK57C3j5UeAZuBlGboCxgsYyMspIN8nAeNX53BD5PBqfl">-->
-    <p>
-    <label class="form_label" for="id_first_name">:שם פרטי</label>
-    <input style="text-align: right" type="text" name="first_name" required="" id="id_first_name">
+<!--    <p>-->
+<!--    <label class="form_label" for="id_first_name">:שם פרטי</label>-->
+<!--    <input style="text-align: right" type="text" name="first_name" required="" id="id_first_name">-->
 
 
-  </p>
+<!--  </p>-->
 
 
-  <p>
-    <label class="form_label" for="id_last_name">:שם משפחה</label>
-    <input style="text-align: right" type="text" name="last_name" required="" id="id_last_name">
+<!--  <p>-->
+<!--    <label class="form_label" for="id_last_name">:שם משפחה</label>-->
+<!--    <input style="text-align: right" type="text" name="last_name" required="" id="id_last_name">-->
 
 
-  </p>
+<!--  </p>-->
 
 
-  <p>
-    <label class="form_label" for="id_phone_number">:מספר פלאפון</label>
-    <input style="text-align: right" type="text" name="phone_number" required="" id="id_phone_number">
+<!--  <p>-->
+<!--    <label class="form_label" for="id_phone_number">:מספר פלאפון</label>-->
+<!--    <input style="text-align: right" type="text" name="phone_number" required="" id="id_phone_number">-->
 
 
-  </p>
+<!--  </p>-->
 
 
-  <p>
-    <label  class="form_label" for="id_email">:אימייל</label>
-    <input style="text-align: right" type="email" name="email" required="" id="id_email">
+<!--  <p>-->
+<!--    <label  class="form_label" for="id_email">:אימייל</label>-->
+<!--    <input style="text-align: right" type="email" name="email" required="" id="id_email">-->
 
 
-  </p>
+<!--  </p>-->
 
 
-  <p>
-    <label class="form_label" for="id_message">:הודעה אישית</label>
-    <input style="text-align: right" type="text" name="message" required="" id="id_message">
+<!--  <p>-->
+<!--    <label class="form_label" for="id_message">:הודעה אישית</label>-->
+<!--    <input style="text-align: right" type="text" name="message" required="" id="id_message">-->
 
 
 
 
-  </p>
+<!--  </p>-->
 
     <input type="submit" value="Submit" class="join_button">
 </form>

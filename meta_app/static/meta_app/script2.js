@@ -130,15 +130,7 @@ function JSchanger() {
 }
 
 function Discretchanger() {
-    document.getElementById('div_to_change').innerHTML = 'רוצים להבין לעומק את יסודות המתמטיקה? לקבל ציון גבוה כדי להרים את הממוצע? צריכים תגבור? זה הקורס בשבילכם' +
-        '<br><br>תחשיב הפסוקים' +
-        '<br>תורת הקבוצות' +
-        '<br>פונקציות' +
-        '<br>עוצמות' +
-        '<br>יחסים' +
-        '<br>קומבינטוריקה' +
-        '<br>תורת הגרפים' +
-        '<br>תרגול מבחנים';
+    document.getElementById('div_to_change').innerHTML = 'רוצים להבין לעומק את יסודות המתמטיקה? לקבל ציון גבוה כדי להרים את הממוצע? צריכים תגבור? זה הקורס בשבילכם';
     document.getElementById('div_to_change').style.fontSize = '40px'
     document.getElementById('div_to_change').style.textAlign = 'center';
 
@@ -161,14 +153,7 @@ function Discretchanger() {
 }
 
 function Linearchanger() {
-    document.getElementById('div_to_change').innerHTML = 'רוצים להבין לעומק את אלגברה לינארית? לקבל ציון גבוה בקורס החשוב הזה? צריכים תגבור? זה הקורס בשבילכם' +
-        '<br><br>מערכת משוואות לינאריות' +
-        '<br>תורת המטריצות ודטרמיננטות' +
-        '<br>תלות לינארית' +
-        '<br>בסיסים ומימד' +
-        '<br>העתקות ומטריצת מעבר' +
-        '<br>ניצבות, אורתוגונליות ואורתונורמליות' +
-        '<br>תרגול מבחנים';
+    document.getElementById('div_to_change').innerHTML = 'תלמידי תיכון ואוהבים לתכנת? אנחנו הפתרון שלכם! בואו ללמוד לעומק את יסודות התכנות, תתכוננו לבגרות ולצבא בצורה המיטבית ביותר עם חניכה מלאה! דברו איתנו'
     document.getElementById('div_to_change').style.fontSize = '40px'
     document.getElementById('div_to_change').style.textAlign = 'center';
 
@@ -190,14 +175,7 @@ function Linearchanger() {
 }
 
 function Infichanger() {
-    document.getElementById('div_to_change').innerHTML = 'רוצים להבין לעומק חשבון אינפיניטיסמלי וחדוו"א? לקבל ציון גבוה בקורס החשוב הזה? צריכים תגבור? זה הקורס בשבילכם' +
-        '<br><br>מבוא מתמטי' +
-        '<br>סדרות וגבולות של סדרות' +
-        '<br>פונקציות וגבולות של פונקציות' +
-        '<br>רציפות' +
-        '<br>פונקציות לוגריתמיות' +
-        '<br>חקירת פונקציות' +
-        '<br>תרגול מבחנים';
+    document.getElementById('div_to_change').innerHTML = 'רוצים להבין לעומק חשבון אינפיניטיסמלי וחדוו"א? לקבל ציון גבוה בקורס החשוב הזה? צריכים תגבור? זה הקורס בשבילכם';
     document.getElementById('div_to_change').style.fontSize = '40px'
     document.getElementById('div_to_change').style.textAlign = 'center';
 

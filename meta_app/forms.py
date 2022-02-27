@@ -1,8 +1,7 @@
 from enum import unique
-
-from django.contrib.auth.forms import UserCreationForm
-
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
+from django.contrib.auth.views import LoginView
 from django.core.validators import EmailValidator, MinLengthValidator
 from django import forms
 from django.forms import HiddenInput, DateInput
@@ -19,22 +18,31 @@ def validate_phone(number):
 
         )
 
-# validators=[EmailValidator(message='Invalid Email, Try again!')
 
-# class Sign_up_form(forms.ModelForm):
-#     email = forms.EmailField(required=True)
-#     phone_num = forms.CharField(required=True,validators=[MinLengthValidator(10,''),validate_phone])
-#     terms_agreed = forms.BooleanField(required=True)
-#     class Meta:
-#         model = Student
-#         fields = ['first_name', 'last_name','email','city','address','phone_num','terms_agreed']
+
+
+class MyAuthForm(AuthenticationForm):
+    error_messages = {
+        'invalid_login': _(
+            "בן בוארון."
+        ),
+        'inactive': _("This account is inactive."),
+    }
+
+
+class MyLoginView(LoginView):
+    authentication_form = MyAuthForm
+
+class CustomAuthForm(AuthenticationForm):
+    def __init__(self, *args, **kwargs):
+        self.error_messages['invalid_login'] = 'Custom error'
+        super().__init__(*args, **kwargs)
 
 
 class UserCreationForm(UserCreationForm):
     username = forms.EmailField(required=True,label='Email',validators=[])
     first_name = forms.CharField(required=True,label='First Name')
     last_name = forms.CharField(required=True,label='Last Name')
-
     password2 = forms.CharField(
         label=_("Password confirmation"),
         widget=forms.PasswordInput(attrs={'autocomplete': 'new-password'}),
@@ -58,11 +66,11 @@ class UserCreationForm(UserCreationForm):
 
 
 class ContactUs(forms.ModelForm):
-    first_name = forms.CharField(label=':שם פרטי')
+    first_name = forms.CharField(label='שם פרטי')
     last_name = forms.CharField(label='שם משפחה')
     email = forms.EmailField(label='אימייל')
     phone_number = forms.CharField(label='מספר פלאפון')
-    message = forms.CharField(label='הודעה אישית')
+    message = forms.CharField(label='הודעה אישית',widget=forms.Textarea)
 
     class Meta:
         model = Lead
@@ -75,22 +83,14 @@ class ProfilePageForm(forms.ModelForm):
     user = forms.ModelChoiceField(queryset=User.objects.all(),widget=HiddenInput)
     profile_pic = forms.FileField(required=False,widget=HiddenInput)
     birth_date = forms.DateField(required=True, label="תאריך לידה", widget=MyDateWidget())
-    bio = forms.CharField(label="קצת עליי")
+    bio = forms.CharField(label="קצת עליי",widget=forms.Textarea)
     terms_agreed = forms.BooleanField(required=True, label="הסכמה לתנאי השימוש")
     phone_numer = forms.CharField(required=True,validators=[validate_phone], label="מספר טלפון")
+    city = forms.CharField(required=True,label='עיר מגורים')
     class Meta:
         model = Profile
         fields = ('phone_numer','city','birth_date','bio','terms_agreed')
 
 
-class AuthenticationForm(forms.Form):
-
-    error_messages = {
-        'invalid_login': _(
-            "לא קיים משתמש במערכת עם שם משתמש וסיסמה זו, אנא נסו שנית"
-            "במידת הצורך אפסו את סיסמתכם"
-        ),
-        'inactive': _("This account is inactive."),
-    }
 
 

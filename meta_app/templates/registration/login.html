@@ -10,7 +10,7 @@
                 <h2 class="p1" style="font-size: 35px;color: white">התחבר</h2>
                 <form method="post" style="display: flex; flex-direction: column; text-align: right">
                     {% csrf_token %}
-                    <div style="color: white;text-align: center;list-style: none;text-decoration: none" >{{ form.errors }}</div>
+                    <div style="color: white;text-align: center;list-style: none;text-decoration: none" >{{form.errors}}</div>
                     <div>
                     <label class="form_label" for="{{ form.username.id_for_label }}">:שם משתמש</label>
                     {{ form.username }}

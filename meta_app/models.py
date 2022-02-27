@@ -49,8 +49,8 @@ types = (
 )
 
 class Profile(MetaModel):
-    user = models.OneToOneField(User,on_delete=CASCADE,null=True)
-    profile_pic = models.ImageField(max_length=1500,upload_to='meta_app/static/images',null=True,blank=True,default='https://pngset.com/images/blue-person-icon-pictures-to-pin-pinsdaddy-blue-people-logo-symbol-hand-word-furniture-transparent-png-104501.png')
+    user = models.OneToOneField(User,on_delete=CASCADE,null=True,to_field='id')
+    profile_pic = models.ImageField(max_length=1500,upload_to='meta_app/static/images',null=True,blank=True,default='')
     bio = models.TextField(max_length=1000,null=True,blank=True)
     linked_in_url = models.CharField(max_length=1000,null=True,blank=True)
     terms_agreed = models.BooleanField(null=False,blank=False)
@@ -62,6 +62,7 @@ class Profile(MetaModel):
 
     def __str__(self):
         return str(self.user)
+
 
 
 class Course(MetaModel):
