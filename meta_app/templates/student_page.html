@@ -3,99 +3,105 @@
 
 {% block content_block %}
 
-<body style="color: black; text-align: center;display: flex">
-<div id="mySidenav" class="sidenav">
-    <button class="icon_button_student" onclick="location.href='/'"><img
-            src="{% static 'meta_app/MetaIconColor.png' %}"
-            style="width: 43px; transform: translateY(-3px); padding-top: 0%">
-    </button>
+    <body style="color: black; text-align: center;display: flex">
+    <div id="mySidenav" class="sidenav">
+        <button class="icon_button_student" onclick="location.href='/'"><img
+                src="{% static 'meta_app/MetaIconColor.png' %}"
+                style="width: 43px; transform: translateY(-3px); padding-top: 0%">
+        </button>
 
-    <a href="#myBio">הפרטים שלי</a>
-    <a href="#myTeachers">המורים שלי</a>
-    <a href="#myLessons">היסטוריית שיעורים</a>
+        <a href="#myBio">הפרטים שלי</a>
+        <a href="#myTeachers">המורים שלי</a>
+        <a href="#myLessons">היסטוריית שיעורים</a>
 
-    <a href="#">ניצול קרדיטים</a>
-    <a href="#">הקורסים שלי</a>
-</div>
-<div style="background-image:url({% static 'meta_app/free-space-background-07Fixed02.jpg' %}); padding-top: 8%;padding-right: 5%;padding-bottom: 35%;text-align: center;color: white">
-    <div class="transbox_student">
-        <button onclick="location.href='/edit_profile'" style="display: flex;"><i style='font-size:24px' class='fa fa-edit'></i></button>
-        <h1 style="text-align: center;color: white">דף התלמיד של  {{user.first_name}}</h1>
+        <a href="#">ניצול קרדיטים</a>
+        <a href="#">הקורסים שלי</a>
+    </div>
+    <div style="background-image:url({% static 'meta_app/new21copy2.jpg' %}); background-repeat: no-repeat;background-size: cover; padding-top: 8%;padding-right: 5%;padding-bottom: 8%;text-align: center;color: white">
+        <div class="transbox_student">
+            <button onclick="location.href='/edit_profile'" style="display: flex;"><i style='font-size:24px'
+                                                                                      class='fa fa-edit'></i></button>
+            <h1 style="text-align: center;color: white">דף התלמיד של {{ user.first_name }}</h1>
 
 
-<!--        <img src="{{user.profile.profile_pic}}" style="width: 10%"><br><br>-->
-<!--        <a href="{{user.profile.linked_in_url}}" target="_blank"><i class="fa fa-linkedin-square"-->
-<!--                                                                    style="font-size: 36px"></i></a><br><br>-->
-        <div id="myBio">
-            <h2> :הפרטים שלי</h2>
-            <hr>
-            <ul style="list-style: none; text-align: right; padding-right:40px; font-size: 18px ">
-                <li>:קרדיטים שצברתי<br>{{user.profile.credits}} 💸 </li>
-                <br>
-                <li>{{user.profile.birth_date}} :תאריך לידה</li>
-                <br>
-                <li>{{user.profile.phone_numer}} :מספר טלפון</li>
-                <br>
-                <li>{{user}} :אימייל</li>
-                <br>
-                <li> קצת עליי:  {{user.profile.bio}}</li>
-            </ul>
-        </div>
+            <!--        <img src="{{user.profile.profile_pic}}" style="width: 10%"><br><br>-->
+            <!--        <a href="{{user.profile.linked_in_url}}" target="_blank"><i class="fa fa-linkedin-square"-->
+            <!--                                                                    style="font-size: 36px"></i></a><br><br>-->
+            <div id="myBio">
+                <h2> :הפרטים שלי</h2>
+                <hr>
+                <ul style="list-style: none; text-align: right; padding-right:40px; font-size: 22px ">
+                    <li>:קרדיטים שצברתי<br>{{ user.profile.credits }} 💸</li>
+                    <br>
+                    <li>{{ user.profile.birth_date }} :תאריך לידה</li>
+                    <br>
+                    <li>{{ user.profile.phone_numer }} :מספר טלפון</li>
+                    <br>
+                    <li>{{ user }} :אימייל</li>
+                    <br>
+                    <li> קצת עליי: {{ user.profile.bio }}</li>
+                </ul>
+            </div>
 
             <div id="myTeachers" style="visibility: visible; text-align: center">
 
-            <h2>:המורים שלי</h2>
+                <h2>:המורים שלי</h2>
                 <hr>
-            <table >
-                <strong><tr style="text-align: center">
-                    <th>:שם המורה</th>
-                    <th>:שם התלמיד</th>
-                    <th>:אימייל</th>
-                </tr></strong>
-                {% for l in teachers %}
-                <tr style="text-align: right">
-                    <td>{{l.user.first_name}} {{l.user.first_name}}</td>
-                    <td>{{l.phone_numer}}</td>
-                    <td>{{l.user.email}}</td>
-                </tr>
-                {% endfor%}
-            </table>
+                <table>
+                    <strong>
+                        <tr style="text-align: center">
+                            <th>:מספר פלאפון</th>
+                            <th>:שם המורה</th>
+                            <th>:אימייל</th>
+                        </tr>
+                    </strong>
+                    {% for l in teachers %}
+                        <tr style="text-align: right">
+                            <td>{{ l.phone_numer }}</td>
+                            <td>{{ l.user.first_name }} {{ l.user.first_name }}</td>
+                            <td>{{ l.user.email }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
 
+            </div>
+
+            <div id="myLessons" style="visibility: visible; text-align: center">
+                <h2 style="text-align: center">:השיעורים שלי</h2>
+                <hr>
+                <table style="text-align: center">
+                    <strong>
+                        <tr style="text-align: right">
+                            <th>:קישור חומר לימוד</th>
+                            <th>:קישור הקלטה</th>
+                            <th>:נושאים</th>
+                            <th>:מורה</th>
+                            <th>:תאריך השיעור</th>
+                        </tr>
+                    </strong>
+                    {% for l in lessons %}
+                        <tr style="text-align: right">
+                            {% if l.lesson_material %}
+                                <td><a href="{{ l.lesson_material }}" target="_blank">Material</a></td>
+                            {% else %}
+                                <td>טרם הועלה</td>
+                            {% endif %}
+                            {% if l.record_url %}
+                                <td><a href="{{ l.record_url }}" target="_blank">Video</a></td>
+                            {% else %}
+                                <td>טרם הועלה</td>
+                            {% endif %}
+                            <td>{{ l.subject }}</td>
+                            <td>{{ l.teacher.user.first_name }} {{ l.teacher.user.last_name }}</td>
+                            <td>{{ l.lesson_date }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+
+            </div>
         </div>
 
-        <div id="myLessons" style="visibility: visible; text-align: center">
-            <h2 style="text-align: center">:השיעורים שלי</h2><hr>
-            <table style="text-align: center">
-                <strong><tr style="text-align: right">
-                    <th>:תאריך השיעור</th>
-                    <th>:מורה</th>
-                    <th>:נושאים</th>
-                    <th>:קישור הקלטה</th>
-                    <th>:קישור חומר לימוד</th>
-                </tr></strong>
-                {% for l in lessons %}
-                <tr style="text-align: right">
-                    <td>{{l.lesson_date}}</td>
-                    <td>{{l.teacher.user.first_name}} {{l.teacher.user.last_name}}</td>
-                    <td>{{l.subject}}</td>
-                    {% if l.record_url %}
-                    <td><a href="{{l.record_url}}" target="_blank">Video</a></td>
-                    {% else %}
-                    <td>טרם הועלה</td>
-                    {% endif %}
-                    {% if l.lesson_material %}
-                    <td><a href="{{l.lesson_material}}" target="_blank">Material</a></td>
-                    {% else %}
-                    <td>טרם הועלה</td>
-                    {% endif %}
-                </tr>
-                {% endfor%}
-            </table>
-
-        </div>
     </div>
-
-</div>
-</body>
+    </body>
 
 {% endblock %}

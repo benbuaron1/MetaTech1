@@ -1,0 +1,45 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block title_clock %} קורסים מקוונים {% endblock %}
+{% block content_block %}
+    <div class="containter_div_col"
+         style="background-image: url({% static 'meta_app/new21copy2.jpg' %});background-repeat: no-repeat; background-size: cover; padding-top: 5%; padding-bottom: 5%;">
+        <div class="private_lesson_div">
+            <div style="background-color: rgba(255,255,255,0.58); z-index: 2; margin: auto; margin-top: -36px; border-radius: 20px">
+                <h1><img src="{% static 'meta_app/PNG-Transparent2 copy.png' %}"
+                         style="width: 200px;margin-left: 2%; margin-bottom: 10%; float: left">קורסים מקוונים </h1>
+
+                <p>קורס הכנה לבגרות במתמטיקה 3 / 4 / 5 יחידות 16.4<span
+                        style="background-color: #00ff8f; border-radius: 15px; padding: 7px; cursor: pointer"
+                        onclick="location.href='/coming_soon'">פרטים נוספים  </span></p>
+                <p>קורס הכנה לבגרות במדעי המחשב 5 יחידות ג'אבה 23.4<span
+                        style="background-color: #00ff8f; border-radius: 15px; padding: 7px; cursor: pointer"
+                        onclick="location.href='/coming_soon'">פרטים נוספים  </span></p>
+                <p>קורס הכנה לבגרות במדעי המחשב 5 יחידות סי שאארפ 23.4<span
+                        style="background-color: #00ff8f; border-radius: 15px; padding: 7px; cursor: pointer;"
+                        onclick="location.href='/coming_soon'">פרטים נוספים  </span></p>
+                <p>קורס הכנה לבחינה אקדמית בג'אבה  10.5<span
+                        style="background-color: #00ff8f; border-radius: 15px; padding: 7px; cursor: pointer"
+                        onclick="location.href='/coming_soon'">פרטים נוספים  </span></p>
+                <p>קורס הכנה לבחינה אקדמית בפייתון  10.5<span
+                        style="background-color: #00ff8f; border-radius: 15px; padding: 7px; cursor: pointer"
+                        onclick="location.href='/coming_soon'">פרטים נוספים  </span></p>
+                <div style="display: flex;flex-direction: row-reverse">
+                    <div style="width: 60%">
+                        <p style="font-size: 45px"> 053 - 473 - 2242 <a href="https://wa.me/+972534732242"
+                                                                        class="whatsapp"
+                                                                        target="_blank"><i
+                                class="fa fa-whatsapp"></i></a></p>
+                        <p style="font-size: 45px"> 050 - 231 - 7575 <a href="https://wa.me/+972502317575"
+                                                                        class="whatsapp"
+                                                                        target="_blank"><i
+                                class="fa fa-whatsapp"></i></a></p>
+                    </div>
+                    <div style="padding-bottom: 5%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

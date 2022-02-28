@@ -4,22 +4,23 @@
 
 {% block content_block %}
 
-<body>
-<div  style="background-image: url({% static 'meta_app/free-space-background-07Fixed02.jpg' %}); padding-top: 5%; padding-bottom: 22%">
+    <body>
+    <div style="background-image: url({% static 'meta_app/new21copy2.jpg' %}); background-repeat: no-repeat; background-size: cover; padding-top: 5%; padding-bottom: 22%">
 
-    {% if user.is_authenticated %}
-<h1 style="text-align:center; color: white">צור פרופיל</h1>
-<hr>
-<div class = "createprofile_div" style="margin-right:30%;margin-left:30%;background-color: rgba(255,255,255,0.37);text-align: center;padding:10px">
-<form action="{% url 'create_profile' %}" method="post" style="margin-top:3%;">
-    {% csrf_token %}
-<!--    todo copy the create profile from inspect and insert attribue place holder-->
-    {{ form.as_p }}
-    <input class="join_button" type="submit" value="Submit" class="btn btn-secondary">
-    {% endif %}
-</form>
-</div>
-</div>
+        {% if user.is_authenticated %}
+            <h1 style="text-align:center; color: white">צור פרופיל</h1>
+            <hr>
+            <div class="createprofile_div"
+                 style="margin-right:30%;margin-left:30%;background-color: rgba(255,255,255,0.37);text-align: center;padding:10px">
+            <form action="{% url 'create_profile' %}" method="post" style="margin-top:3%;">
+            {% csrf_token %}
+            <!--    todo copy the create profile from inspect and insert attribue place holder-->
+            {{ form.as_p}}
+            <input class="join_button" type="submit" value="Submit" class="btn btn-secondary">
+        {% endif %}
+        </form>
+        </div>
+    </div>
 
 
 

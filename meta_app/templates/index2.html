@@ -8,21 +8,25 @@
         <a href="https://wa.me/+972502317575" class="whatsapp" target="_blank"><i class="fa fa-whatsapp"></i></a>
         <a href="https://www.facebook.com/profile.php?id=100078419529974" target="_blank" class="facebook"><i
                 class="fa fa-facebook"></i></a>
+        <a href="#" class="github"><i class="fa fa-github"></i></a>
         <a href="https://twitter.com/MetaTech13" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a>
         {#        <a href="#" class="google"><i class="fa fa-google"></i></a>#}
         <a href="https://www.linkedin.com/company/online-coding-learning/" target="_blank" class="linkedin"><i
                 class="fa fa-linkedin-square"></i></a>
         <a href="https://www.youtube.com/channel/UCDlmenqeGH8TSB9fleqGY0g" target="_blank" class="youtube"><i
                 class="fa fa-youtube"></i></a>
-        <a href="#" class="spotify"><i class="fa fa-spotify"></i></a>
+        {#        <a href="#" class="spotify"><i class="fa fa-spotify"></i></a>#}
         {#        <a href="#" class="telegram"><i class="fa fa-telegram"></i></a>#}
-        <a href="#" class="github"><i class="fa fa-github"></i></a>
+
         {#        <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>#}
     </div>
-    <div class="containter_div_col">
+    <div class="containter_div_col"
+         style="background-image: url({% static 'meta_app/new21copy2.jpg' %});background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
 
         <div class="containter_div_row rowtocol1"
-             style="background-image: url({% static 'meta_app/free-space-background-07Fixed02.jpg' %});background-repeat: no-repeat; background-size: cover; padding-top: 13%; padding-bottom: 22%">
+                {#             style="background-image: url({% static 'meta_app/free-space-background-07Fixed02.jpg' %});background-repeat: no-repeat; background-size: cover; padding-top: 13%; padding-bottom: 22%">#}
+             style="  padding-top: 14%; padding-bottom: 25%; ">
+
             <img src="{% static 'meta_app/newLogoPng.png' %}" class="logo1"
                  style="margin-right: 3%; justify-self: center">
             {% if user.is_authenticated %}
@@ -45,12 +49,12 @@
 
             {% else %}
                 <div class="containter_div_col" style="width: 40%">
-                    <div class="p1" style="width: 100%;  font-size: 400%; color:white;font-weight: 700">
+                    <div class="p1" style="width: 100%;  font-size: 440%; color:white;font-weight: 700">
                         בואו ללמוד לתכנת
                     </div>
-                    <p class="p2">
-                        אם כל אחת יכולה, למה שגם את לא תצטרפי? השאירי פרטים ונחזור אלייך עם תוכנית מותאמת במיוחד בשבילך!
-                    <p style="font-size: 12px;color: white;text-align: center">הפנייה לשני המינים*
+                    <p class="p2" style="font-weight: 600">
+                        למה שלא תפתחו את דלת הכניסה שלכם להייטק? אם כולם יכולים, אז גם אתם
+                        השאירו פרטים ונחזור אליכם לבניית תוכנית לימוד מותאמת אישית
                     </p>
 
                     <br>
@@ -58,7 +62,7 @@
                 </div>
             {% endif %}
         </div>
-        <div class="containter_div_row rowtocol2" style=" background-color: white;  height: 600px; ">
+        <div class="containter_div_row rowtocol2" style=" background-color: rgba(255,255,255,0.89);  height: 50%; ">
             <div class="p2" id="div_to_change"
                  style="width: 40%; margin-right: 5%; color: black;font-size: 40px; vertical-align: middle;">
                 <p style="margin-right: 3%; text-align: center">... הכל מתחיל בלחיצת כפתור </p>
@@ -100,15 +104,24 @@
 
         </div>
         <div class="containter_div_row"
-             style="background-image: url({% static 'meta_app/free-space-background-07Fixed02.jpg' %});background-repeat: no-repeat; background-size: cover; padding-top: 1%;">
+             style="background: rgba(255,255,255,0) ;padding-top: 1%;">
             <div class="containter_div_col" style="width: 100%;display: flex;"
                  id="who_are_we">
-                <h4 class="p1" style="margin-top: 2%; padding-top: 2%;color: white">?מי אנחנו</h4>
-
+                <h4 class="p1" style="margin-top: 2%; padding-top: 2%;color: rgb(255,255,255)">?מי אנחנו</h4>
 
                 <div class="containter_div_row about_text">
-                    <div style=" width:50%;text-align: center">
-                        <img src="{% static 'meta_app/people.jpg' %}" style="width: 90%">
+                    <div style="width: 50%; text-align: center;">
+                        <h1 class="p1">מטה-טק</h1>
+                        <p style="font-size: 30px; text-align: right; padding: 20px">פלטפורמת לימודי אונליין עבור מקצועות המחשבים והמתמטיקה, החל מגילאי תיכון, הכנה לשירות, ואקדמיה</p>
+                    </div>
+                    <div style="width: 55.5%; text-align: center;">
+                        <img src="{% static 'meta_app/Mockup.jpg' %}" style="width: 90%">
+                    </div>
+
+                </div>
+                <div class="containter_div_row about_text">
+                    <div style=" width:55%;text-align: center">
+                        <img src="{% static 'meta_app/about6.jpg' %}" style="width: 90%">
                     </div>
                     <div style="width: 50%;text-align: center">
                         <div>
@@ -122,32 +135,45 @@
                 <div class="containter_div_row about_text">
                     <div style="width: 50%; text-align: center;">
                         <h1 class="p1">מאמינים בקדמה</h1>
-                        <p style="font-size: 30px; text-align: right; padding: 20px">אופן הלימוד והתכנים מעודכנים ומותאמים לצרכי האקדמייה והתעשייה הטכנלוגית בארץ ובעולם</p>
+                        <p style="font-size: 30px; text-align: right; padding: 20px">אופן הלימוד והתכנים מעודכנים
+                            ומותאמים לצרכי האקדמייה והתעשייה הטכנלוגית בארץ ובעולם</p>
 
                     </div>
-                    <div style="width: 50%; text-align: center;">
-                        <img src="{% static 'meta_app/working.jpg' %}" style="width: 90%">
+                    <div style="width: 55.5%; text-align: center;">
+                        <img src="{% static 'meta_app/about3.jpg' %}" style="width: 90%">
                     </div>
 
                 </div>
                 <div class="containter_div_row about_text">
-                    <div style="width: 50%; text-align: center;">
-                        <img src="{% static 'meta_app/grade_suc.jpg' %}" style="width: 90%">
+                    <div style="width: 55%; text-align: center;">
+                        <img src="{% static 'meta_app/about2.jpg' %}" style="width: 90%">
                     </div>
                     <div style="width: 50%; text-align: center;">
                         <h1 class="p1">מאמינים בתוצאות</h1>
-                        <p style="font-size: 30px; text-align: right; padding: 20px">אנחנו פה כדי להצליח ביחד אתכם, הצלחה נמדדת בזכות הדרך והתוצאv, התלמידים שלנו יכולים להעיד על התוצאות במסע המשותף שלנו יחד</p>
+                        <p style="font-size: 30px; text-align: right; padding: 20px">אנחנו פה כדי להצליח ביחד אתכם,
+                            ההצלחה נמדדת בזכות הדרך והתוצאה, התלמידים שלנו יכולים להעיד על התוצאות במסע המשותף שלנו
+                            יחד</p>
                     </div>
                 </div>
             </div>
+
             <div class="containter_div_col">
                 <br>
-<!--                <br>-->
-<!--                <br>-->
-<!--                <br>-->
+                <!--                <br>-->
+                <!--                <br>-->
+                <!--                <br>-->
             </div>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     </div>
+
 
     </body>
 

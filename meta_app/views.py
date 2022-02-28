@@ -102,4 +102,14 @@ def create_profile(request):
             form = ProfilePageForm(data=request.POST)
             return render(request, 'create_profile.html', {'form': form})
 
+def private_lesson(request):
+    return render(request, 'private_lesson.html')
+
+
+def coming_soon(request):
+    return render(request, 'coming_soon.html')
+
+def online_courses(request):
+    return render(request, 'online_courses.html')
+
 

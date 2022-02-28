@@ -12,12 +12,12 @@ html, button, p, div {
     justify-self: center;
     align-self: center;
     color: white;
-    text-shadow: rgba(0, 0, 0, 0.27) 5px 5px 5px;
+    text-shadow: rgba(255, 255, 255, 0.27) 2px 2px 2px;
 }
 
 .logo1 {
     display: flex;
-    width: 40%
+    width: 40%;
 }
 
 .containter_div_row {
@@ -42,9 +42,15 @@ html, button, p, div {
     z-index: 2;
     position: fixed;
     flex-direction: row;
-    align-items: center;
     justify-content: space-evenly;
+    align-items: center;
+    justify-self: center;
+    align-content: center;
+    justify-items: center;
+   align-self: center;
     width: 100%;
+
+
 }
 
 .topnav button {
@@ -85,7 +91,7 @@ html, button, p, div {
     /*background-image: linear-gradient(0deg, rgba(0,0,0,1) 12%, rgba(47,47,47,1) 37%, rgba(127,127,128,1) 63%, rgba(222,222,222,1) 81%, rgba(251,251,251,1) 93%);*/
     color: white;
     /*background-image: url("free-space-background-07Fixed02.jpg");*/
-    background-color: rgba(54, 135, 250, 0.83);
+    background-color: rgba(24, 106, 234, 0.83);
     -moz-background-size: contain;
 }
 
@@ -199,7 +205,7 @@ html, button, p, div {
 .p1 {
     font-size: 300%;
     text-align: center;
-    text-shadow: rgba(0, 0, 0, 0.27) 5px 5px 5px;
+    text-shadow: rgba(255, 255, 255, 0.27) 2px 2px 2px;
     align-self: center;
 }
 
@@ -209,7 +215,7 @@ html, button, p, div {
     background-color: rgba(54, 135, 250, 0.83);
     width: 35%;
     margin: auto;
-    height: 50px;
+    /*height: 50px;*/
     border-radius: 10px;
     border: none;
     cursor: pointer;
@@ -218,6 +224,9 @@ html, button, p, div {
     /*box-shadow: rgba(255, 255, 255, 0.3) 3px 3px 3px;*/
     font-family: 'Rubik', sans-serif;
     transition-duration: 0.4s;
+    height: fit-content;
+    padding-top: 11px;
+    padding-bottom: 11px;
 
 
 }
@@ -235,9 +244,10 @@ html, button, p, div {
     display: block;
     font-size: 23px;
     border-color: rgba(160, 126, 255, 0);
-    transition-duration: 0.3s;
-    transition-property: background-color, color, font-size, padding-bottom;
-    background-color: rgba(255, 255, 255, 0.15);
+    transition-duration: 0.1s;
+    /*transition-property: background-color, color, font-size, padding-bottom, border-bottom-color;*/
+    /*background-color: rgba(255, 255, 255, 0.15);*/
+    background-color: rgba(3, 0, 0, 0.75);
     color: white;
     cursor: pointer;
     padding: 1px;
@@ -249,10 +259,11 @@ html, button, p, div {
 
 
 .menu_button_regular:hover {
-    background-color: #ffffff;
-    color: #000000;
-    border-bottom: 5px solid #cd1dff;
-    font-size: 26px;
+    /*background-color: #ffffff;*/
+    /*color: #000000;*/
+    /*border-bottom: 5px solid #cd1dff;*/
+    border-bottom: 5px solid #1d43ff;
+    /*font-size: 26px;*/
 }
 
 .menu_button_regular_scroll {
@@ -276,7 +287,8 @@ html, button, p, div {
 .menu_button_regular_scroll:hover {
     background-color: #ffffff;
     color: #000000;
-    border-bottom: 5px solid #cd1dff;
+    /*border-bottom: 5px solid #cd1dff;*/
+    border-bottom: 5px solid #1d43ff;
 }
 
 .icon_button_student {
@@ -299,9 +311,10 @@ html, button, p, div {
 
 
 .icon_button_student:hover {
-    background-color: #ffffff;
+    /*background-color: #ffffff;*/
     color: #000000;
-    border-bottom: 5px solid #cd1dff;
+    /*border-bottom: 5px solid #cd1dff;*/
+    border-bottom: 5px solid #1d43ff;
     font-size: 26px;
 }
 
@@ -373,7 +386,7 @@ html, button, p, div {
 .drop_down_content {
     display: none;
     position: absolute;
-    background-color: rgba(249, 249, 249, 0);
+    background-color: rgba(3, 0, 0, 0.75);
     width: 17.5%;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -385,9 +398,8 @@ html, button, p, div {
 .drop_down_content a {
     float: outside;
     font-size: 23px;
-    transition-duration: 0.3s;
-    transition-property: background-color, color;
-    background-color: rgba(255, 255, 255, 0.15);
+    transition-duration: 0.2s;
+    background-color: rgba(255, 255, 255, 0);
     color: white;
     padding-bottom: 12px;
     padding-top: 14px;
@@ -402,9 +414,10 @@ html, button, p, div {
 
 
 .drop_down_content a:hover {
-    background-color: #ffffff;
-    color: #000000;
-    border-bottom: 5px solid #cd1dff;
+    /*background-color: #ffffff;*/
+    /*color: #000000;*/
+    /*border-bottom: 5px solid #cd1dff;*/
+    border-bottom: 5px solid #1d43ff;
 }
 
 .drop_down:hover .drop_down_content {
@@ -484,9 +497,7 @@ html, button, p, div {
     font-size: 20px;
 }
 
-.icon-bar a:hover {
-    background-color: #000;
-}
+
 
 .facebook {
     background: #3B5998;
@@ -533,9 +544,15 @@ html, button, p, div {
     color: white;
 }
 
+
 .instagram {
     background: #c5029e;
     color: white;
+}
+
+.icon-bar a:hover {
+    background-color: #ffffff;
+    color: black;
 }
 
 
@@ -549,16 +566,18 @@ html, button, p, div {
     z-index: 99;
     border: none;
     outline: none;
-    background-color: rgba(205, 29, 255, 0.82);
+    background-color: rgba(54, 135, 250, 0.83);
     color: white;
     cursor: pointer;
     padding: 15px;
     border-radius: 200px;
     font-size: 25px;
+    transition-duration: 0.3s;
+    font-weight: 800;
 }
 
 .myBtn:hover {
-    background-color: #555;
+    background-color: rgba(0, 76, 201, 0.83);
 }
 
 /* The Modal (background) */
@@ -694,6 +713,13 @@ input[type=text], input[type=password], input[type=email], input[type=number], i
     color: black;
     font-size: 20px;
     border: solid rgba(56, 93, 241, 0) 5px;
+    text-align: right;
+}
+label{
+    text-align: center;
+    padding: 10px;
+    color: white;
+    font-size: 24px;
 }
 
 input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=number]:focus, input[type=url]:focus, textarea:focus {
@@ -790,7 +816,7 @@ img.avatar {
 }
 
 .transbox_student {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.47);
     width: 70%;
     alignment: center;
     align-self: center;
@@ -806,13 +832,17 @@ table {
     font-family: 'Rubik', sans-serif;
     border-collapse: collapse;
     width: 100%;
+    text-shadow: black 1px 1px 1px;
+    font-size: 22px;
 }
 
 td, th {
+    text-shadow: black 1px 1px 1px;
     border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-    background-color: rgba(110, 86, 238, 0.38);
+    /*border-radius: 10px;*/
+    text-align: right;
+    padding: 12px;
+    background-color: rgba(39, 48, 227, 0.82);
 }
 
 tr:nth-child(even) {
@@ -825,9 +855,56 @@ tr:nth-child(even) {
 }
 
 .about_text{
-    background-color: rgba(197, 197, 197, 0.6);
+    background-color: rgba(255, 255, 255, 0.18);
     height: 60%;
     width: 100%;
     color: #ffffff;
-    margin-bottom: 2.5%;
+    /*margin-bottom: 2.5%;*/
+}
+
+.private_lesson_div{
+    width: 70%;
+    background-image: url("coding.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    border-radius: 20px;
+    text-align: right;
+}
+
+.private_lesson_div h1{
+    font-size: 55px;
+    padding-right: 25px;
+    font-weight: 800;
+    font-weight: 800;
+}
+
+.private_lesson_div p{
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 30px;
+    padding-right: 55px;
+    font-weight: 400;
+    padding-left: 55px;
+}
+
+.private_lesson_div span{
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    margin-right: 20px;
+    font-weight: 800;
+}
+
+
+
+.private_lesson_div a {
+    /*display: block;*/
+    text-align: center;
+    padding: 16px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 25px;
+    border-radius: 45px;
+    margin-right: 25px;
 }

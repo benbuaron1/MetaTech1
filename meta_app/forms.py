@@ -83,7 +83,7 @@ class ProfilePageForm(forms.ModelForm):
     user = forms.ModelChoiceField(queryset=User.objects.all(),widget=HiddenInput)
     profile_pic = forms.FileField(required=False,widget=HiddenInput)
     birth_date = forms.DateField(required=True, label="תאריך לידה", widget=MyDateWidget())
-    bio = forms.CharField(label="קצת עליי",widget=forms.Textarea)
+    bio = forms.CharField(label="קצת עליי",widget=forms.Textarea(attrs={'placeholder': 'מקום לימודים, שנת לימודים, מקצועות', 'textalign': 'right'}))
     terms_agreed = forms.BooleanField(required=True, label="הסכמה לתנאי השימוש")
     phone_numer = forms.CharField(required=True,validators=[validate_phone], label="מספר טלפון")
     city = forms.CharField(required=True,label='עיר מגורים')
