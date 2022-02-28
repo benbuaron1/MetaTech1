@@ -864,7 +864,8 @@ tr:nth-child(even) {
 
 .private_lesson_div{
     width: 70%;
-    background-image: url("coding.gif");
+    /*!*background-image: url("coding.gif");*! this is the older gif */
+    background-image: url("codinggg.gif");
     background-repeat: no-repeat;
     background-size: cover;
     margin: auto;
