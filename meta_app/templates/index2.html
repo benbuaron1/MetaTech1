@@ -26,9 +26,9 @@
         <div class="containter_div_row rowtocol1"
                 {#             style="background-image: url({% static 'meta_app/free-space-background-07Fixed02.jpg' %});background-repeat: no-repeat; background-size: cover; padding-top: 13%; padding-bottom: 22%">#}
              style="  padding-top: 14%; padding-bottom: 25%; ">
-
             <img src="{% static 'meta_app/newLogoPng.png' %}" class="logo1"
                  style="margin-right: 3%; justify-self: center">
+
             {% if user.is_authenticated %}
                 <div class="containter_div_col" style="width: 40%">
                     <div class="p1" style="width: 100%;  font-size: 400%; color:white;font-weight: 700">
@@ -45,7 +45,9 @@
                     {% else %}
                         <button class="join_button" onclick="location.href='/create_profile'">צור פרופיל</button>
                     {% endif %}
+
                 </div>
+
 
             {% else %}
                 <div class="containter_div_col" style="width: 40%">
